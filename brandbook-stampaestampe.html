@@ -111,7 +111,8 @@ main{margin-left:240px}
   z-index:1}
 #cover>*{position:relative;z-index:2}
 #cover .cover-label{font-family:var(--font-ui);font-size:0.75rem;letter-spacing:0.2em;color:var(--ciano-ss);text-transform:uppercase;margin-bottom:1rem;font-weight:600}
-#cover h1{font-family:var(--font-plain);font-size:clamp(3rem,7.5vw,6.5rem);color:var(--white);line-height:0.95;font-weight:800;letter-spacing:-0.035em}
+#cover h1{line-height:0.95;margin:0}
+#cover h1 img{width:306px;height:auto;display:block}
 #cover h1 .h1-e{color:var(--rosso-ss)}
 #cover h1 .h1-tld{color:var(--ciano-ss)}
 #cover .cover-claim{font-family:var(--font-plain);font-size:1.4rem;color:#999;margin-top:1.25rem;font-weight:400;letter-spacing:-0.01em}
@@ -497,7 +498,9 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
 
 <!-- ═══════════════════════ NAV ═══════════════════════ -->
 <nav>
-  <div class="nav-logo">Stampa<span class="nav-logo-e">e</span>Stampe<span class="nav-logo-tld">.it</span></div>
+  <div class="nav-logo">
+    <img src="assets/images/logo-ss.svg" alt="StampaeStampe Logo" style="height: 22px; display: block;">
+  </div>
 
   <div class="nav-section">Brand Strategy</div>
   <a href="#strategy">01 — Tesi di marca</a>
@@ -544,7 +547,7 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
     <div class="cover-ver">v.1.0 · Aprile 2026</div>
   </div>
   <div class="cover-label">Brand Manual</div>
-  <h1>Stampa<span class="h1-e">e</span><br>Stampe<span class="h1-tld">.it</span></h1>
+  <h1><img src="assets/images/logo-cover.svg" alt="StampaeStampe Logo"></h1>
   <div class="cover-claim">Il tuo mondo in una Stampa.</div>
   <div class="cover-bottom">
     <span class="brand-name">Brand Manual · Strategia & Identità</span>
