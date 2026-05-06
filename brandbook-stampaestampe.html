@@ -492,6 +492,38 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
   .positioning-statement .ps-meta{grid-template-columns:1fr}
   .scale-row,.icon-scale-row{gap:1rem}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   COLOR PAIRING TOOL
+   ═══════════════════════════════════════════════════════════ */
+.cpt-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:var(--sp-xl);border-bottom:2px solid var(--grey-light);padding-bottom:0}
+.cpt-tab{font-family:var(--font-ui);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.75rem 1.25rem;border:none;background:transparent;color:var(--grey-mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color 0.2s,border-color 0.2s;border-radius:4px 4px 0 0}
+.cpt-tab:hover{color:var(--black)}
+.cpt-tab.active{color:var(--black);border-bottom-color:var(--ciano-ss)}
+.cpt-panels{margin-top:var(--sp-xl)}
+.cpt-panel{display:none;flex-direction:column;gap:1.5rem}
+.cpt-panel.active{display:flex}
+.cpt-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.cpt-layout-alt{opacity:0.85}
+.cpt-preview{border-radius:12px;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;padding:2.5rem}
+.cpt-preview-inner{flex:1;display:flex;flex-direction:column;gap:1.25rem;justify-content:center}
+.cpt-preview-headline{font-family:var(--font-plain);font-size:clamp(1.2rem,2.5vw,1.9rem);font-weight:700;line-height:1.2;letter-spacing:-0.025em;max-width:420px}
+.cpt-preview-btn{align-self:flex-start;font-family:var(--font-plain);font-size:0.9rem;font-weight:600;padding:0.65rem 1.5rem;border:none;border-radius:24px;cursor:default;letter-spacing:-0.01em}
+.cpt-preview-logo{font-family:var(--font-plain);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;border-top:1px solid rgba(0,0,0,0.12);padding-top:1rem;margin-top:1rem}
+.cpt-info{background:var(--grey-bg);border-radius:12px;padding:1.75rem;display:flex;flex-direction:column;gap:1.25rem}
+.cpt-swatch-block{display:flex;flex-direction:column;gap:1rem}
+.cpt-swatch-row{display:flex;align-items:flex-start;gap:1rem}
+.cpt-swatch-big{width:52px;height:52px;border-radius:8px;flex-shrink:0}
+.cpt-swatch-role{font-family:var(--font-plain);font-size:0.88rem;font-weight:700;color:var(--black);margin-bottom:0.4rem;letter-spacing:-0.01em}
+.cpt-swatch-vals{display:flex;flex-direction:column;gap:0.2rem}
+.cpt-swatch-vals span{font-family:var(--font-ui);font-size:0.72rem;color:#555;letter-spacing:0.02em}
+.cpt-swatch-vals strong{color:var(--black);font-weight:700}
+.cpt-token{display:inline-block;background:var(--black);color:var(--white);font-family:var(--font-ui);font-size:0.65rem;font-weight:600;letter-spacing:0.05em;padding:0.15rem 0.5rem;border-radius:3px;margin-top:0.2rem}
+.cpt-contrast-badge{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;padding:0.4rem 0.8rem;border-radius:20px;width:fit-content;text-transform:uppercase}
+.cpt-contrast-badge.good{background:#E0F8F2;color:#00785F}
+.cpt-note{font-family:var(--font-plain);font-size:0.85rem;color:#555;line-height:1.6}
+@media(max-width:800px){.cpt-layout{grid-template-columns:1fr}.cpt-tabs{gap:0.25rem}.cpt-tab{font-size:0.65rem;padding:0.5rem 0.75rem}}
+
 </style>
 </head>
 <body>
@@ -525,6 +557,7 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
   <a href="#color-primary">14 — Colori primari</a>
   <a href="#color-palette">15 — Palette completa</a>
   <a href="#color-subpalettes">16 — Sotto-palette</a>
+  <a href="#color-pairing">16b — Abbinamenti colore</a>
   <a href="#color-logo">17 — Colore + logo</a>
   <a href="#color-service">18 — Colori di servizio</a>
 
@@ -1391,6 +1424,485 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
   </div>
 </section>
 
+
+<!-- ═══════════════════════ COLOR PAIRING TOOL ═══════════════════════ -->
+<section id="color-pairing" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">16b · Strumento abbinamenti colore</span>
+    <h3>Abbinamenti colore approvati.</h3>
+    <p>Ogni volta che testo o elementi grafici vengono posizionati su un colore di sfondo, è necessario garantire il rispetto dei requisiti minimi di contrasto per l'accessibilità. Utilizzando queste coppie colore predefinite si assicura che ogni comunicazione StampaeStampe.it sia accessibile e rispetti gli standard del brand.</p>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="cpt-tabs" id="cpt-tabs">
+    <button class="cpt-tab active" data-family="ciano" onclick="cptSwitch(this,'ciano')">Ciano S&amp;S</button>
+    <button class="cpt-tab" data-family="rosso" onclick="cptSwitch(this,'rosso')">Rosso S&amp;S</button>
+    <button class="cpt-tab" data-family="nero" onclick="cptSwitch(this,'nero')">Nero S&amp;S</button>
+    <button class="cpt-tab" data-family="indaco" onclick="cptSwitch(this,'indaco')">Indaco</button>
+    <button class="cpt-tab" data-family="teal" onclick="cptSwitch(this,'teal')">Teal</button>
+    <button class="cpt-tab" data-family="verde" onclick="cptSwitch(this,'verde')">Verde</button>
+    <button class="cpt-tab" data-family="neutro" onclick="cptSwitch(this,'neutro')">Neutri</button>
+  </div>
+
+  <!-- PANNELLI -->
+  <div class="cpt-panels">
+
+    <!-- ── CIANO S&S ── -->
+    <div class="cpt-panel active" id="cpt-ciano">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#0097E3">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#002D57">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#002D57;color:#BCE3F7">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#002D57">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#0097E3"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Ciano S&amp;S 5</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #0097E3</span>
+                  <span><strong>RGB</strong> 0 · 151 · 227</span>
+                  <span><strong>CMYK</strong> 100 · 33 · 0 · 11</span>
+                  <span class="cpt-token">ciano-ss.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#002D57"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Ciano S&amp;S 1</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #002D57</span>
+                  <span><strong>RGB</strong> 0 · 45 · 87</span>
+                  <span><strong>CMYK</strong> 100 · 48 · 0 · 66</span>
+                  <span class="cpt-token">ciano-ss.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Il Ciano S&amp;S è il colore primario del brand. Su sfondo Ciano 5 usare sempre il testo e gli elementi in Ciano 1 (scuro). Differenza minima: 5 tonalità nella stessa famiglia.</p>
+        </div>
+      </div>
+      <!-- variante scura -->
+      <div class="cpt-layout cpt-layout-alt">
+        <div class="cpt-preview" style="background:#003A6E">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#BCE3F7">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#BCE3F7;color:#003A6E">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#BCE3F7">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#003A6E"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Ciano S&amp;S 2</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #003A6E</span>
+                  <span><strong>RGB</strong> 0 · 58 · 110</span>
+                  <span><strong>CMYK</strong> 100 · 47 · 0 · 57</span>
+                  <span class="cpt-token">ciano-ss.2</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#BCE3F7"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Ciano S&amp;S 9</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #BCE3F7</span>
+                  <span><strong>RGB</strong> 188 · 227 · 247</span>
+                  <span><strong>CMYK</strong> 24 · 8 · 0 · 3</span>
+                  <span class="cpt-token">ciano-ss.9</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Variante scura: sfondo Ciano 2 con testo e logo in Ciano 9 (chiaro). Ideale per banner istituzionali e header a tutto campo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ROSSO S&S ── -->
+    <div class="cpt-panel" id="cpt-rosso">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#CF2517">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#3D0A06">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#3D0A06;color:#F4C9C5">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#3D0A06">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#CF2517"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Rosso S&amp;S 5</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #CF2517</span>
+                  <span><strong>RGB</strong> 207 · 37 · 23</span>
+                  <span><strong>CMYK</strong> 0 · 82 · 89 · 19</span>
+                  <span class="cpt-token">rosso-ss.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#3D0A06"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Rosso S&amp;S 1</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #3D0A06</span>
+                  <span><strong>RGB</strong> 61 · 10 · 6</span>
+                  <span><strong>CMYK</strong> 0 · 84 · 90 · 76</span>
+                  <span class="cpt-token">rosso-ss.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Il Rosso S&amp;S è riservato ad accenti forti e comunicazioni ad alta urgenza. Su sfondo Rosso 5, testo e logo in Rosso 1 (quasi nero). Usare con parsimonia.</p>
+        </div>
+      </div>
+      <div class="cpt-layout cpt-layout-alt">
+        <div class="cpt-preview" style="background:#7A1610">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#F4C9C5">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#F4C9C5;color:#7A1610">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#F4C9C5">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#7A1610"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Rosso S&amp;S 3</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #7A1610</span>
+                  <span><strong>RGB</strong> 122 · 22 · 16</span>
+                  <span><strong>CMYK</strong> 0 · 82 · 87 · 52</span>
+                  <span class="cpt-token">rosso-ss.3</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#F4C9C5"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Rosso S&amp;S 9</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #F4C9C5</span>
+                  <span><strong>RGB</strong> 244 · 201 · 197</span>
+                  <span><strong>CMYK</strong> 0 · 18 · 19 · 4</span>
+                  <span class="cpt-token">rosso-ss.9</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Variante scura del Rosso: sfondo Rosso 3 (bordeaux) con testo e logo in Rosso 9 (rosa chiaro). Adatta a comunicazioni premium.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NERO S&S ── -->
+    <div class="cpt-panel" id="cpt-nero">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#000000">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#FFFFFF">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#FFFFFF;color:#000000">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#FFFFFF">Stampa<span style="color:#CF2517">e</span>Stampe<span style="color:#0097E3">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#000000;border:1px solid #E3E3E3"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Nero S&amp;S 0</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #000000</span>
+                  <span><strong>RGB</strong> 0 · 0 · 0</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 100</span>
+                  <span class="cpt-token">nero-ss.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#FFFFFF;border:1px solid #E3E3E3"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Bianco</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #FFFFFF</span>
+                  <span><strong>RGB</strong> 255 · 255 · 255</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 0</span>
+                  <span class="cpt-token">bianco</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AAA · 21:1
+          </div>
+          <p class="cpt-note">Su sfondo nero il logo è sempre bianco (versione heritage). Il testo è sempre bianco. Contrasto massimo, adatto a tutti i contesti ad alta visibilità.</p>
+        </div>
+      </div>
+      <div class="cpt-layout cpt-layout-alt">
+        <div class="cpt-preview" style="background:#F1F1F1">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#000000">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#000000;color:#F1F1F1">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#000000">Stampa<span style="color:#CF2517">e</span>Stampe<span style="color:#0097E3">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#F1F1F1;border:1px solid #E3E3E3"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Grigio chiaro (Nero 11)</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #F1F1F1</span>
+                  <span><strong>RGB</strong> 241 · 241 · 241</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 6</span>
+                  <span class="cpt-token">nero-ss.11</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#000000"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Nero S&amp;S 0</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #000000</span>
+                  <span><strong>RGB</strong> 0 · 0 · 0</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 100</span>
+                  <span class="cpt-token">nero-ss.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AAA · ≥ 16:1
+          </div>
+          <p class="cpt-note">Sfondo grigio chiaro (#F1F1F1) è l'unica variante neutra ammessa con il logo heritage a 3 colori. Testo e logo sempre in Nero S&amp;S 0.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── INDACO ── -->
+    <div class="cpt-panel" id="cpt-indaco">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#3A40D9">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#0A0E33">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#0A0E33;color:#CDCFF6">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#0A0E33">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#3A40D9"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Indaco 5</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #3A40D9</span>
+                  <span><strong>RGB</strong> 58 · 64 · 217</span>
+                  <span><strong>CMYK</strong> 73 · 71 · 0 · 15</span>
+                  <span class="cpt-token">indaco.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#0A0E33"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Indaco 1</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #0A0E33</span>
+                  <span><strong>RGB</strong> 10 · 14 · 51</span>
+                  <span><strong>CMYK</strong> 80 · 73 · 0 · 80</span>
+                  <span class="cpt-token">indaco.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">L'Indaco è adatto a campagne digitali su social media e landing page. Usare come colore di sotto-palette abbinato a Ciano S&amp;S o Viola.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TEAL ── -->
+    <div class="cpt-panel" id="cpt-teal">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#008A82">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#001E1B">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#001E1B;color:#C5E9E6">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#001E1B">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#008A82"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Teal 5</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #008A82</span>
+                  <span><strong>RGB</strong> 0 · 138 · 130</span>
+                  <span><strong>CMYK</strong> 100 · 0 · 6 · 46</span>
+                  <span class="cpt-token">teal.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#001E1B"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Teal 1</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #001E1B</span>
+                  <span><strong>RGB</strong> 0 · 30 · 27</span>
+                  <span><strong>CMYK</strong> 100 · 0 · 10 · 88</span>
+                  <span class="cpt-token">teal.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Il Teal è adatto a comunicazioni legate a sostenibilità, eco-friendly e supporti outdoor. Si abbina bene con Verde e Ciano S&amp;S nelle sotto-palette.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── VERDE ── -->
+    <div class="cpt-panel" id="cpt-verde">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#008A40">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#001E0E">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#001E0E;color:#C7E9D2">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#001E0E">Stampa<span style="opacity:.7">e</span>Stampe<span style="opacity:.7">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#008A40"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Verde 5</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #008A40</span>
+                  <span><strong>RGB</strong> 0 · 138 · 64</span>
+                  <span><strong>CMYK</strong> 100 · 0 · 54 · 46</span>
+                  <span class="cpt-token">verde.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#001E0E"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Verde 1</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #001E0E</span>
+                  <span><strong>RGB</strong> 0 · 30 · 14</span>
+                  <span><strong>CMYK</strong> 100 · 0 · 53 · 88</span>
+                  <span class="cpt-token">verde.1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AA · ≥ 4.5:1
+          </div>
+          <p class="cpt-note">Il Verde è adatto a comunicazioni legate a prodotti eco-friendly e linee sostenibili. Abbinamento naturale con Teal nelle sotto-palette a 2 e 3 colori.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NEUTRI ── -->
+    <div class="cpt-panel" id="cpt-neutro">
+      <div class="cpt-layout">
+        <div class="cpt-preview" style="background:#FFFFFF;border:1px solid #E3E3E3">
+          <div class="cpt-preview-inner">
+            <p class="cpt-preview-headline" style="color:#000000">Per professionisti che non ammettono errori.</p>
+            <button class="cpt-preview-btn" style="background:#000000;color:#FFFFFF">Scopri i servizi</button>
+          </div>
+          <div class="cpt-preview-logo" style="color:#000000">Stampa<span style="color:#CF2517">e</span>Stampe<span style="color:#0097E3">.it</span></div>
+        </div>
+        <div class="cpt-info">
+          <div class="cpt-swatch-block">
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#FFFFFF;border:1px solid #E3E3E3"></div>
+              <div>
+                <div class="cpt-swatch-role">Sfondo · Bianco (Nero 12)</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #FFFFFF</span>
+                  <span><strong>RGB</strong> 255 · 255 · 255</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 0</span>
+                  <span class="cpt-token">bianco</span>
+                </div>
+              </div>
+            </div>
+            <div class="cpt-swatch-row">
+              <div class="cpt-swatch-big" style="background:#000000"></div>
+              <div>
+                <div class="cpt-swatch-role">Primo piano · Nero S&amp;S 0</div>
+                <div class="cpt-swatch-vals">
+                  <span><strong>HEX</strong> #000000</span>
+                  <span><strong>RGB</strong> 0 · 0 · 0</span>
+                  <span><strong>CMYK</strong> 0 · 0 · 0 · 100</span>
+                  <span class="cpt-token">nero-ss.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cpt-contrast-badge good">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Contrasto AAA · 21:1
+          </div>
+          <p class="cpt-note">Il bianco è il contesto principale del brand. Qui il logo viene sempre usato nella versione heritage a 3 colori. Unica combinazione neutra ammessa per il logo tradizionale.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cpt-panels -->
+
+  <div class="callout">
+    <p><strong>Regola tono su tono.</strong> La differenza tra tonalità di sfondo e primo piano deve essere sempre di almeno 5 passi all'interno della stessa famiglia di colori. Esempio: sfondo al tono 7 → testo al tono 1 o 2. Questa regola garantisce accessibilità e coerenza con le linee guida del manuale operativo.</p>
+  </div>
+</section>
+
 <!-- ═══════════════════════ COLOR + LOGO ═══════════════════════ -->
 <section id="color-logo" class="content-section">
   <div class="section-header">
@@ -1983,6 +2495,18 @@ footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;le
 </main>
 
 <script>
+
+// Color Pairing Tool — tab switch
+function cptSwitch(btn, family) {
+  // aggiorna tab attivi
+  document.querySelectorAll('.cpt-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  // mostra pannello corretto
+  document.querySelectorAll('.cpt-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('cpt-' + family);
+  if (panel) panel.classList.add('active');
+}
+
 // Smooth scroll attivo sui link nav
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
