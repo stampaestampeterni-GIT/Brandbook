@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StampaeStampe.it — Brand Manual 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE UFFICIALE — Manuale Operativo StampaeStampe.it
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  /* PRIMARI (3 colori del logo) */
+  --black-ss:#000000;
+  --ciano-ss:#0097E3;
+  --rosso-ss:#CF2517;
+
+  /* NEUTRI / NERO S&S famiglia (12 toni) */
+  --nero-0:#000000;
+  --nero-1:#1A1A1A;
+  --nero-2:#2E2E2E;
+  --nero-3:#454545;
+  --nero-4:#5C5C5C;
+  --nero-5:#707070;
+  --nero-6:#8A8A8A;
+  --nero-7:#A3A3A3;
+  --nero-8:#BFBFBF;
+  --nero-9:#CACACA;
+  --nero-10:#E3E3E3;
+  --nero-11:#F1F1F1;
+
+  /* CIANO S&S famiglia */
+  --ciano-0:#000000;
+  --ciano-3:#005A87;
+  --ciano-5:#0097E3;
+  --ciano-7:#5BBEED;
+  --ciano-9:#BCE3F7;
+
+  /* ROSSO S&S famiglia */
+  --rosso-3:#7A1610;
+  --rosso-5:#CF2517;
+  --rosso-7:#E47872;
+  --rosso-9:#F4C9C5;
+
+  /* COLORI DI SERVIZIO (terziari) */
+  --evidenza:#009AE9;
+  --successo:#00957A;
+  --attenzione:#FA6C71;
+  --critico:#CF2517;
+
+  /* SHORTCUTS */
+  --white:#FFFFFF;
+  --black:#000000;
+  --grey-bg:#F1F1F1;
+  --grey-mid:#707070;
+  --grey-light:#E3E3E3;
+
+  /* TIPOGRAFIA — Plain del manuale operativo (fallback Inter) */
+  --font-plain:'Inter','Plain',sans-serif;
+  --font-ui:'Inter Tight','Inter',sans-serif;
+
+  /* SPACING */
+  --sp-xs:0.5rem;
+  --sp-sm:0.75rem;
+  --sp-md:1rem;
+  --sp-lg:1.5rem;
+  --sp-xl:2.25rem;
+  --sp-2xl:3.5rem;
+  --sp-3xl:5rem;
+
+  /* CONTAINERS */
+  --max-content:800px;
+  --max-wide:1200px;
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-plain);
+  background:var(--white);
+  color:var(--black);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:-0.01em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════ */
+nav{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--black);padding:2rem 1.5rem;overflow-y:auto;z-index:100;display:flex;flex-direction:column;gap:0.15rem}
+nav .nav-logo{color:var(--white);font-family:var(--font-plain);font-size:0.95rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:1.5rem;border-bottom:1px solid #333;padding-bottom:1rem}
+nav .nav-logo .nav-logo-e{color:var(--rosso-ss)}
+nav .nav-logo .nav-logo-tld{color:var(--ciano-ss)}
+nav a{color:#A3A3A3;font-family:var(--font-ui);font-size:0.72rem;text-decoration:none;padding:0.35rem 0;display:block;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s,border-color 0.2s;border-left:2px solid transparent;padding-left:0.75rem;line-height:1.4;font-weight:500}
+nav a:hover{color:var(--white);border-left-color:var(--ciano-ss)}
+nav .nav-section{color:#555;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:1.25rem;margin-bottom:0.25rem;padding-left:0.75rem;font-weight:600}
+
+main{margin-left:240px}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER
+   ═══════════════════════════════════════════════════════════ */
+#cover{height:100vh;background:#000;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--sp-3xl);position:relative;overflow:hidden}
+#cover::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 20% 30%,rgba(0,151,227,0.15) 0%,transparent 50%),
+  radial-gradient(circle at 80% 70%,rgba(207,37,23,0.1) 0%,transparent 55%);
+  z-index:1}
+#cover>*{position:relative;z-index:2}
+#cover .cover-label{font-family:var(--font-ui);font-size:0.75rem;letter-spacing:0.2em;color:var(--ciano-ss);text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+#cover h1{font-family:var(--font-plain);font-size:clamp(3rem,7.5vw,6.5rem);color:var(--white);line-height:0.95;font-weight:800;letter-spacing:-0.035em}
+#cover h1 .h1-e{color:var(--rosso-ss)}
+#cover h1 .h1-tld{color:var(--ciano-ss)}
+#cover .cover-claim{font-family:var(--font-plain);font-size:1.4rem;color:#999;margin-top:1.25rem;font-weight:400;letter-spacing:-0.01em}
+#cover .cover-meta{position:absolute;top:var(--sp-3xl);right:var(--sp-3xl);text-align:right;z-index:3}
+#cover .cover-meta .cover-year{font-family:var(--font-plain);font-size:5rem;color:rgba(255,255,255,0.05);font-weight:800;line-height:1;letter-spacing:-0.04em}
+#cover .cover-meta .cover-ver{font-family:var(--font-ui);font-size:0.7rem;color:#444;letter-spacing:0.15em;text-transform:uppercase;margin-top:0.5rem;font-weight:500}
+#cover .cover-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:2.5rem;padding-top:2rem;border-top:1px solid #1A1A1A}
+#cover .cover-bottom .brand-name{font-family:var(--font-plain);font-size:1.1rem;color:var(--white);font-weight:700;letter-spacing:-0.02em}
+#cover .cover-bottom .cover-info{font-family:var(--font-ui);font-size:0.7rem;color:#555;letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION DIVIDERS
+   ═══════════════════════════════════════════════════════════ */
+.section-divider{min-height:60vh;display:flex;align-items:flex-end;padding:var(--sp-3xl);position:relative;overflow:hidden}
+.section-divider .sd-inner{border-left:3px solid rgba(255,255,255,0.3);padding-left:2rem;position:relative;z-index:2}
+.section-divider h2{font-family:var(--font-plain);font-size:clamp(2.5rem,5vw,4.5rem);color:var(--white);font-weight:700;line-height:1.05;letter-spacing:-0.03em}
+.sd-strategy{background:#000}
+.sd-voice{background:#1A1A1A}
+.sd-logo{background:var(--black)}
+.sd-claim{background:var(--ciano-ss)}
+.sd-color{background:#001a2e}
+.sd-type{background:#0a0a0a}
+.sd-icons{background:#1A1A1A}
+.section-divider .sd-num{position:absolute;top:var(--sp-3xl);right:var(--sp-3xl);font-family:var(--font-plain);font-size:9rem;color:rgba(255,255,255,0.05);font-weight:800;line-height:1;letter-spacing:-0.05em;z-index:1}
+.sd-claim .sd-num{color:rgba(0,0,0,0.08)}
+.sd-claim h2{color:var(--black)}
+.sd-claim .sd-inner{border-left-color:rgba(0,0,0,0.3)}
+.sd-claim .sd-tag{color:rgba(0,0,0,0.5)!important}
+.section-divider .sd-tag{font-family:var(--font-ui);font-size:0.7rem;color:rgba(255,255,255,0.4);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;display:block;font-weight:600}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════════════════════ */
+.content-section{padding:var(--sp-3xl);max-width:var(--max-wide);margin:0 auto}
+.section-header{margin-bottom:var(--sp-2xl)}
+.section-header .sec-label{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;display:block;margin-bottom:0.75rem}
+.section-header h3{font-family:var(--font-plain);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--black);line-height:1.05;letter-spacing:-0.03em}
+.section-header p{font-family:var(--font-plain);font-size:1rem;color:#444;margin-top:1rem;max-width:640px;line-height:1.7;font-weight:400}
+
+/* ─── TWO COL ─── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-xl);align-items:start}
+.col-visual{background:var(--grey-bg);border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px;padding:2rem}
+
+/* ═══════════════════════════════════════════════════════════
+   BRAND STRATEGY — SEZIONE NUOVA
+   ═══════════════════════════════════════════════════════════ */
+.thesis-block{background:var(--black);color:var(--white);padding:var(--sp-3xl);margin:var(--sp-2xl) 0;border-radius:8px;position:relative;overflow:hidden}
+.thesis-block::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:var(--ciano-ss)}
+.thesis-block .tb-label{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:1rem;display:block}
+.thesis-block h3{font-family:var(--font-plain);font-size:clamp(1.8rem,3.2vw,2.8rem);color:var(--white);font-weight:700;letter-spacing:-0.025em;line-height:1.15;margin-bottom:1.5rem}
+.thesis-block .tb-body{font-family:var(--font-plain);font-size:1.05rem;color:#BFBFBF;line-height:1.7;max-width:760px;font-weight:400}
+.thesis-block .tb-highlight{color:var(--white);font-weight:600}
+
+.positioning-statement{background:linear-gradient(135deg,#000 0%,#001a2e 100%);color:white;padding:var(--sp-3xl);border-radius:8px;margin:var(--sp-2xl) 0;position:relative}
+.positioning-statement .ps-label{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:1.5rem;display:block}
+.positioning-statement .ps-text{font-family:var(--font-plain);font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.5;font-weight:500;letter-spacing:-0.015em;max-width:900px}
+.positioning-statement .ps-text em{color:var(--ciano-ss);font-style:normal;font-weight:600}
+.positioning-statement .ps-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:var(--sp-xl);padding-top:var(--sp-xl);border-top:1px solid rgba(255,255,255,0.1)}
+.positioning-statement .ps-meta-item .ps-meta-label{font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#666;margin-bottom:0.5rem;font-weight:600}
+.positioning-statement .ps-meta-item .ps-meta-value{font-family:var(--font-plain);font-size:0.95rem;color:white;font-weight:500;line-height:1.5}
+
+/* Pillars 3 colonne */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.pillar-card{border-top:4px solid var(--ciano-ss);padding-top:1.5rem;background:var(--grey-bg);padding:2rem;border-radius:0 0 8px 8px;border-top-left-radius:0;border-top-right-radius:0;border-top:4px solid var(--ciano-ss)}
+.pillar-card:nth-child(2){border-top-color:var(--rosso-ss)}
+.pillar-card:nth-child(3){border-top-color:var(--black)}
+.pillar-card .pc-num{font-family:var(--font-plain);font-size:2.8rem;color:var(--nero-9);font-weight:800;line-height:1;letter-spacing:-0.04em;margin-bottom:0.5rem}
+.pillar-card h4{font-family:var(--font-plain);font-size:1.15rem;font-weight:700;letter-spacing:-0.015em;margin:0.5rem 0;color:var(--black)}
+.pillar-card p{font-family:var(--font-plain);font-size:0.92rem;color:#444;line-height:1.65;font-weight:400}
+
+/* Tabella competitiva */
+.competitive-table{width:100%;border-collapse:collapse;margin-top:var(--sp-xl);font-family:var(--font-plain);font-size:0.9rem}
+.competitive-table th{text-align:left;padding:1rem;background:var(--black);color:white;font-family:var(--font-ui);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700}
+.competitive-table th:first-child{background:#1A1A1A}
+.competitive-table th.us-col{background:var(--ciano-ss)}
+.competitive-table td{padding:1rem;border-bottom:1px solid var(--grey-light);vertical-align:top;line-height:1.5}
+.competitive-table td:first-child{font-weight:600;color:var(--black);background:var(--grey-bg)}
+.competitive-table td.us-col{background:#E0F4FD;font-weight:500}
+
+/* Differentiation formula */
+.diff-formula{background:var(--black);color:white;padding:var(--sp-2xl);border-radius:8px;margin:var(--sp-xl) 0;text-align:center;border:2px solid var(--ciano-ss)}
+.diff-formula .df-label{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:1.25rem;display:block}
+.diff-formula .df-text{font-family:var(--font-plain);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;letter-spacing:-0.02em;line-height:1.4}
+.diff-formula .df-text strong{color:var(--ciano-ss);font-weight:700}
+
+/* Asset / proof points */
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.proof-card{background:white;border:1px solid var(--grey-light);border-radius:8px;padding:1.75rem;transition:transform 0.3s,box-shadow 0.3s}
+.proof-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.08)}
+.proof-card .pf-icon{width:42px;height:42px;background:var(--black);color:var(--ciano-ss);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-plain);font-size:1.2rem;font-weight:700;margin-bottom:1rem}
+.proof-card h4{font-family:var(--font-plain);font-size:1.05rem;font-weight:700;letter-spacing:-0.015em;margin-bottom:0.5rem;color:var(--black)}
+.proof-card p{font-family:var(--font-plain);font-size:0.9rem;color:#555;line-height:1.6}
+
+/* Target audience block */
+.audience-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:var(--sp-xl)}
+.audience-chip{background:var(--grey-bg);border-left:3px solid var(--ciano-ss);padding:1rem 1.25rem;border-radius:0 4px 4px 0}
+.audience-chip h5{font-family:var(--font-plain);font-size:0.95rem;font-weight:700;color:var(--black);margin-bottom:0.25rem;letter-spacing:-0.015em}
+.audience-chip p{font-family:var(--font-plain);font-size:0.78rem;color:#555;line-height:1.5}
+
+/* ═══════════════════════════════════════════════════════════
+   TONE OF VOICE
+   ═══════════════════════════════════════════════════════════ */
+.tov-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:var(--sp-xl)}
+.tov-card{border-radius:8px;overflow:hidden;border:1px solid var(--grey-light)}
+.tov-card .tc-head{padding:1rem 1.5rem;display:flex;align-items:center;gap:0.75rem;font-family:var(--font-ui);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+.tc-head.do-head{background:#E0F8F2;color:#00785F}
+.tc-head.dont-head{background:#FCEAEB;color:#B71C1C}
+.tc-head .th-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:white;font-weight:700}
+.do-icon{background:var(--successo)}.dont-icon{background:var(--rosso-ss)}
+.tov-card .tc-body{padding:1.25rem 1.5rem;background:white}
+.tov-card .tc-ex{font-family:var(--font-plain);font-size:0.9rem;color:#333;line-height:1.55;padding:0.75rem 1rem;margin-bottom:0.75rem;border-radius:4px}
+.tc-ex.do-ex{background:#F0FDF6;border-left:3px solid var(--successo)}
+.tc-ex.dont-ex{background:#FEF2F2;border-left:3px solid var(--rosso-ss);color:#999;text-decoration:line-through}
+
+.vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:var(--sp-xl)}
+.vocab-chip{background:var(--black);color:white;border-radius:6px;padding:1rem 1.25rem;font-family:var(--font-plain);font-size:0.95rem;font-weight:600;text-align:center;letter-spacing:-0.015em;transition:transform 0.2s}
+.vocab-chip:hover{transform:translateY(-2px)}
+.vocab-chip.ciano-chip{background:var(--ciano-ss)}
+.vocab-chip.rosso-chip{background:var(--rosso-ss)}
+
+.message-guide{background:linear-gradient(135deg,var(--black) 0%,#001a2e 100%);color:white;padding:var(--sp-2xl);border-radius:8px;margin-top:var(--sp-xl);position:relative;overflow:hidden}
+.message-guide::before{content:'"';position:absolute;top:-2rem;left:1rem;font-family:Georgia,serif;font-size:18rem;color:rgba(0,151,227,0.08);line-height:1}
+.message-guide .mg-label{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:1.25rem;display:block;position:relative;z-index:2}
+.message-guide .mg-text{font-family:var(--font-plain);font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.45;font-weight:500;letter-spacing:-0.02em;max-width:850px;position:relative;z-index:2}
+.message-guide .mg-text strong{color:var(--ciano-ss);font-weight:700}
+
+/* ═══════════════════════════════════════════════════════════
+   LOGO SECTION
+   ═══════════════════════════════════════════════════════════ */
+.logo-display{display:flex;align-items:center;justify-content:center;font-family:var(--font-plain);font-weight:700;letter-spacing:-0.02em;font-size:2.4rem;line-height:1}
+.logo-display .ld-stampa{color:inherit}
+.logo-display .ld-e{color:var(--rosso-ss)}
+.logo-display .ld-tld{color:var(--ciano-ss)}
+.logo-display.heritage{position:relative;display:inline-flex;text-decoration:none}
+.logo-display.heritage::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:3px;background:var(--ciano-ss)}
+.logo-display.heritage::before{content:'';position:absolute;left:0;right:0;bottom:-7px;height:1.5px;background:var(--rosso-ss)}
+.logo-display.on-dark .ld-stampa{color:var(--white)}
+.logo-display.on-dark .ld-e{color:var(--white)}
+.logo-display.on-dark .ld-tld{color:var(--white)}
+.logo-display.on-dark.heritage::after{background:var(--white)}
+.logo-display.on-dark.heritage::before{background:var(--white)}
+.logo-display.on-light .ld-stampa{color:var(--black)}
+.logo-display.on-light .ld-e{color:var(--black)}
+.logo-display.on-light .ld-tld{color:var(--black)}
+.logo-display.on-light.heritage::after{background:var(--black)}
+.logo-display.on-light.heritage::before{background:var(--black)}
+.logo-display.tono-su-tono.heritage::after{background:#005A87}
+.logo-display.tono-su-tono.heritage::before{background:#005A87}
+
+.logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.logo-box{border:1px solid var(--grey-light);border-radius:8px;overflow:hidden;background:white}
+.logo-box .lb-preview{display:flex;align-items:center;justify-content:center;padding:3rem 2rem;min-height:180px}
+.logo-box.bg-white .lb-preview{background:var(--white)}
+.logo-box.bg-grey .lb-preview{background:var(--grey-bg)}
+.logo-box.bg-black .lb-preview{background:var(--black)}
+.logo-box.bg-ciano .lb-preview{background:var(--ciano-ss)}
+.logo-box.bg-photo .lb-preview{background:linear-gradient(135deg,#3E2723 0%,#5D4037 50%,#795548 100%);position:relative}
+.logo-box.bg-photo .lb-preview::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.25)}
+.logo-box.bg-photo .logo-display{position:relative;z-index:2}
+.logo-box .lb-meta{padding:1rem 1.25rem;border-top:1px solid var(--grey-light);background:white}
+.logo-box .lb-meta h4{font-family:var(--font-plain);font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;color:var(--black);margin-bottom:0.25rem}
+.logo-box .lb-meta p{font-family:var(--font-plain);font-size:0.75rem;color:#777;line-height:1.5}
+
+/* Clear space diagram */
+.clearspace-diagram{background:var(--grey-bg);padding:3rem;border-radius:8px;margin-top:var(--sp-xl);display:flex;justify-content:center;align-items:center}
+.cs-frame{position:relative;padding:3rem;border:1.5px dashed var(--ciano-ss)}
+.cs-frame::before,.cs-frame::after{content:'x';position:absolute;font-family:var(--font-plain);font-size:0.85rem;color:var(--ciano-ss);font-weight:600;font-style:italic}
+.cs-frame::before{top:0.3rem;left:50%;transform:translateX(-50%)}
+.cs-frame::after{bottom:0.3rem;right:0.3rem}
+
+/* Scalability */
+.scale-row{display:flex;align-items:flex-end;gap:2rem;margin-top:var(--sp-xl);padding:2.5rem;background:var(--grey-bg);border-radius:8px;flex-wrap:wrap}
+.scale-item{display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.scale-item .si-label{font-family:var(--font-ui);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:#666;font-weight:600}
+
+/* ═══════════════════════════════════════════════════════════
+   CLAIM
+   ═══════════════════════════════════════════════════════════ */
+.claim-display{background:var(--grey-bg);padding:var(--sp-3xl);border-radius:8px;margin-top:var(--sp-xl);text-align:center}
+.claim-display .cd-text{font-family:var(--font-plain);font-size:clamp(2rem,4.5vw,4rem);color:var(--black);font-weight:700;letter-spacing:-0.03em;line-height:1.1}
+.claim-display .cd-author{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ciano-ss);margin-top:1.5rem;font-weight:600}
+
+.claim-formats{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-top:var(--sp-xl)}
+.claim-format{background:var(--grey-bg);border-radius:8px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:300px}
+.claim-format.cf-vertical{min-height:400px}
+.claim-format .cf-label{font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:0.5rem}
+.claim-format .cf-content{font-family:var(--font-plain);font-size:1.5rem;font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--black);flex:1;display:flex;align-items:flex-start;padding:1rem 0}
+.claim-format.cf-vertical .cf-content{align-items:center}
+.claim-format .cf-bottom{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--font-plain);font-size:0.85rem;color:#666;font-weight:500;border-top:1px solid #ccc;padding-top:1rem}
+.claim-format.cf-vertical .cf-bottom{flex-direction:column;align-items:flex-start;gap:0.5rem}
+
+/* ═══════════════════════════════════════════════════════════
+   COLORE / PALETTE
+   ═══════════════════════════════════════════════════════════ */
+.primary-colors{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.primary-swatch{border-radius:8px;overflow:hidden;border:1px solid var(--grey-light)}
+.primary-swatch .ps-color{height:200px;display:flex;align-items:flex-end;padding:1.5rem;color:white;font-family:var(--font-plain);font-size:1rem;font-weight:600}
+.primary-swatch .ps-color.on-light{color:var(--black)}
+.primary-swatch.sw-nero .ps-color{background:var(--black)}
+.primary-swatch.sw-ciano .ps-color{background:var(--ciano-ss)}
+.primary-swatch.sw-rosso .ps-color{background:var(--rosso-ss)}
+.primary-swatch .ps-meta{padding:1.25rem;background:white}
+.primary-swatch .ps-name{font-family:var(--font-plain);font-size:1rem;font-weight:700;color:var(--black);margin-bottom:0.5rem;letter-spacing:-0.015em}
+.primary-swatch .ps-codes{font-family:var(--font-ui);font-size:0.78rem;color:#555;line-height:1.6}
+.primary-swatch .ps-codes div{padding:0.15rem 0}
+.primary-swatch .ps-codes strong{color:var(--black)}
+
+/* Palette completa - matrice 10x12 */
+.palette-matrix{margin-top:var(--sp-xl);overflow-x:auto;background:var(--grey-bg);border-radius:8px;padding:1.5rem}
+.palette-row{display:flex;gap:4px;margin-bottom:4px;align-items:center}
+.palette-row:last-child{margin-bottom:0}
+.palette-row .palette-label{font-family:var(--font-ui);font-size:0.7rem;font-weight:600;color:var(--black);min-width:90px;flex-shrink:0;letter-spacing:-0.01em}
+.palette-cell{width:42px;height:42px;border-radius:4px;flex-shrink:0;border:1px solid rgba(0,0,0,0.05)}
+.palette-header{display:flex;gap:4px;margin-bottom:4px;padding-left:90px}
+.palette-header span{width:42px;text-align:center;font-family:var(--font-ui);font-size:0.7rem;color:#888;font-weight:600}
+
+/* Subpalettes (4/3/2 colori) */
+.subpalette-section{margin-top:var(--sp-2xl)}
+.subpalette-section h4{font-family:var(--font-plain);font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem;color:var(--black)}
+.subpalette-section p{font-family:var(--font-plain);font-size:0.9rem;color:#555;margin-bottom:1.5rem;line-height:1.6;max-width:680px}
+.subpalette-grid{display:grid;gap:1rem}
+.sp4{grid-template-columns:repeat(4,1fr)}
+.sp3{grid-template-columns:repeat(4,1fr)}
+.sp2{grid-template-columns:repeat(4,1fr)}
+.subpalette-block{display:flex;border-radius:6px;overflow:hidden;height:80px;border:1px solid var(--grey-light)}
+.subpalette-block .spb-cell{flex:1}
+
+/* Logo on backgrounds */
+.bg-usage{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.bg-usage-card{border-radius:8px;overflow:hidden;border:1px solid var(--grey-light);background:white}
+.bg-usage-card .buc-preview{min-height:240px;display:flex;align-items:center;justify-content:center;padding:2rem}
+.bg-usage-card.buc-photo .buc-preview{background:linear-gradient(135deg,#3E2723 0%,#5D4037 50%,#795548 100%)}
+.bg-usage-card.buc-color .buc-preview{background:var(--ciano-ss)}
+.bg-usage-card.buc-neutral .buc-preview{background:var(--white)}
+.bg-usage-card .buc-meta{padding:1.5rem;border-top:1px solid var(--grey-light)}
+.bg-usage-card .buc-meta h4{font-family:var(--font-plain);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem;color:var(--black)}
+.bg-usage-card .buc-meta p{font-family:var(--font-plain);font-size:0.85rem;color:#555;line-height:1.55}
+
+/* Service colors (terziari) */
+.service-colors{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.service-card{background:var(--grey-bg);border-radius:8px;padding:1.75rem}
+.service-card .sc-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.service-tag{font-family:var(--font-ui);font-size:0.7rem;font-weight:600;padding:0.3rem 0.7rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em}
+.service-tag.t-evidenza{background:var(--evidenza);color:white}
+.service-tag.t-successo{background:var(--successo);color:white}
+.service-tag.t-attenzione{background:var(--attenzione);color:white}
+.service-tag.t-critico{background:var(--rosso-ss);color:white}
+.service-tag.t-neutral{background:var(--nero-5);color:white}
+.service-card h4{font-family:var(--font-plain);font-size:1.05rem;font-weight:700;letter-spacing:-0.015em;margin-bottom:0.4rem;color:var(--black)}
+.service-card p{font-family:var(--font-plain);font-size:0.88rem;color:#555;line-height:1.6}
+
+.mode-comparison{margin-top:var(--sp-xl);overflow-x:auto}
+.mode-table{width:100%;border-collapse:collapse;font-family:var(--font-plain);font-size:0.85rem;min-width:600px}
+.mode-table th{text-align:left;padding:0.85rem 1rem;background:var(--black);color:white;font-family:var(--font-ui);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700}
+.mode-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--grey-light)}
+.mode-table tr:nth-child(even) td{background:var(--grey-bg)}
+.mode-table .hex-pill{font-family:var(--font-ui);font-size:0.78rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;display:inline-flex;align-items:center;gap:0.5rem}
+.mode-table .hex-pill::before{content:'';width:14px;height:14px;border-radius:3px;background:var(--hex-color);border:1px solid rgba(0,0,0,0.1)}
+
+/* ═══════════════════════════════════════════════════════════
+   TIPOGRAFIA
+   ═══════════════════════════════════════════════════════════ */
+.type-specimen{border:1px solid var(--grey-light);border-radius:8px;overflow:hidden;margin-top:var(--sp-xl);background:white}
+.type-specimen .ts-header{background:var(--black);color:var(--white);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.type-specimen .ts-header h4{font-family:var(--font-plain);font-size:1.15rem;font-weight:700;letter-spacing:-0.02em}
+.type-specimen .ts-header .ts-name{font-family:var(--font-ui);font-size:0.7rem;color:#999;letter-spacing:0.15em;text-transform:uppercase;font-weight:600}
+.type-specimen .ts-demo{padding:2.5rem 2rem}
+.type-specimen .ts-alphabet{font-family:var(--font-plain);font-size:2rem;font-weight:700;letter-spacing:-0.02em;line-height:1.3;color:var(--black);margin-bottom:0.75rem}
+.type-specimen .ts-alphabet.regular{font-weight:400}
+.type-specimen .ts-meta{background:var(--grey-bg);padding:1rem 2rem;display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid var(--grey-light)}
+.type-specimen .ts-meta span{font-family:var(--font-ui);font-size:0.72rem;color:#555;letter-spacing:0.05em}
+.type-specimen .ts-meta strong{color:var(--black);font-weight:700}
+
+.type-comparison{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:var(--sp-xl)}
+.type-comparison-card{background:var(--grey-bg);border-radius:8px;padding:2rem}
+.type-comparison-card h5{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:0.5rem}
+.type-comparison-card .tcc-sample{font-family:var(--font-plain);font-size:3rem;font-weight:500;letter-spacing:-0.025em;color:var(--black);line-height:1;margin-bottom:1rem}
+.type-comparison-card p{font-family:var(--font-plain);font-size:0.85rem;color:#555;line-height:1.6}
+
+/* Lunghezza paragrafo */
+.paragraph-rules{margin-top:var(--sp-xl);display:flex;flex-direction:column;gap:1rem}
+.paragraph-rule{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem;background:var(--grey-bg);border-radius:6px}
+.paragraph-rule .pr-status{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-plain);font-weight:700;color:white;font-size:0.95rem;flex-shrink:0}
+.pr-status.ok{background:var(--successo)}
+.pr-status.ko{background:var(--rosso-ss)}
+.paragraph-rule .pr-text{font-family:var(--font-plain);font-size:0.88rem;color:#444;line-height:1.6}
+.paragraph-rule .pr-text strong{color:var(--black);font-weight:700}
+.paragraph-rule .pr-range{font-family:var(--font-ui);font-size:0.72rem;color:var(--ciano-ss);font-weight:700;letter-spacing:0.05em;background:white;padding:0.4rem 0.8rem;border-radius:4px;border:1px solid var(--grey-light)}
+
+/* Gerarchia stili (hierarchy table) */
+.hierarchy-table{width:100%;border-collapse:collapse;margin-top:var(--sp-xl);font-family:var(--font-plain);font-size:0.88rem}
+.hierarchy-table th{text-align:left;padding:0.85rem 1rem;background:var(--black);color:white;font-family:var(--font-ui);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;white-space:nowrap}
+.hierarchy-table td{padding:1rem;border-bottom:1px solid var(--grey-light);vertical-align:middle}
+.hierarchy-table tr:last-child td{border-bottom:none}
+.hierarchy-table tr:nth-child(even) td{background:var(--grey-bg)}
+.hierarchy-table .ht-style-name{font-weight:700;color:var(--black);letter-spacing:-0.015em}
+.hierarchy-table .ht-size{font-family:var(--font-ui);font-size:0.78rem;color:#666;font-weight:600}
+
+.scale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:var(--sp-xl)}
+.scale-item-block{background:var(--grey-bg);border-radius:8px;padding:1.5rem}
+.scale-item-block .sib-screen{font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ciano-ss);font-weight:700;margin-bottom:0.75rem}
+.scale-item-block .sib-styles{display:flex;flex-direction:column;gap:0.4rem;font-family:var(--font-plain);color:var(--black)}
+.scale-item-block .sib-styles span{font-weight:600;letter-spacing:-0.015em}
+
+/* Application examples gerarchia */
+.hierarchy-examples{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.he-card{background:white;border:1px solid var(--grey-light);border-radius:8px;padding:2rem}
+.he-card .he-tag{font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:0.5rem;display:block}
+.he-card h4{font-family:var(--font-plain);font-size:2.2rem;font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:var(--black)}
+.he-card .he-sub{font-family:var(--font-plain);font-size:0.95rem;color:#555;line-height:1.6;margin-top:0.75rem;font-weight:400}
+.he-card .he-price{font-family:var(--font-plain);font-size:1.1rem;font-weight:700;color:var(--ciano-ss);margin-top:0.75rem}
+.he-card .he-strike{font-family:var(--font-plain);font-size:0.78rem;color:#aaa;text-decoration:line-through;margin-top:0.25rem}
+
+/* ═══════════════════════════════════════════════════════════
+   ICONOGRAFIA
+   ═══════════════════════════════════════════════════════════ */
+.icon-scale-row{display:flex;align-items:flex-end;justify-content:space-around;gap:2rem;margin-top:var(--sp-xl);padding:3rem 2rem;background:var(--grey-bg);border-radius:8px;flex-wrap:wrap}
+.icon-scale-item{display:flex;flex-direction:column;align-items:center;gap:0.75rem;text-align:center}
+.icon-scale-item svg{display:block}
+.icon-scale-item .isi-size{font-family:var(--font-ui);font-size:0.78rem;font-weight:700;color:var(--black);background:white;padding:0.3rem 0.8rem;border-radius:20px;border:1px solid var(--grey-light)}
+
+.icon-rules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:var(--sp-xl)}
+.icon-rule-card{background:white;border:1px solid var(--grey-light);border-radius:8px;padding:1.75rem}
+.icon-rule-card h4{font-family:var(--font-plain);font-size:1.05rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.75rem;color:var(--black)}
+.icon-rule-card p{font-family:var(--font-plain);font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem}
+.icon-rule-card .irc-demo{background:var(--grey-bg);border-radius:6px;padding:1.25rem;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;min-height:80px}
+
+.icon-text-pair{display:flex;align-items:center;gap:0.5rem;font-family:var(--font-plain);color:var(--black);font-weight:500}
+.icon-text-pair.size-12{font-size:0.75rem}
+.icon-text-pair.size-14{font-size:0.875rem}
+.icon-text-pair.size-16{font-size:1rem}
+.icon-text-pair.size-20{font-size:1.25rem}
+
+.icon-button{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6em 1.4em;border-radius:24px;font-family:var(--font-plain);font-size:0.875rem;font-weight:500;border:1.5px solid var(--grey-light);background:white;color:var(--black)}
+.icon-button.b-success{color:var(--successo);border-color:var(--successo)}
+.icon-button.b-disabled{color:var(--nero-9);border-color:var(--nero-10)}
+
+/* ═══════════════════════════════════════════════════════════
+   CALLOUT / DIVIDER
+   ═══════════════════════════════════════════════════════════ */
+hr.brand-divider{border:none;border-top:1px solid var(--grey-light);margin:var(--sp-2xl) 0}
+.callout{background:var(--grey-bg);border-left:4px solid var(--ciano-ss);padding:1.25rem 1.5rem;border-radius:0 6px 6px 0;margin:1.5rem 0}
+.callout.callout-warn{border-left-color:var(--rosso-ss);background:#FEF6F5}
+.callout p{font-family:var(--font-plain);font-size:0.92rem;color:#333;line-height:1.65}
+.callout strong{color:var(--black);font-weight:700}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+footer{background:var(--black);color:white;padding:var(--sp-3xl);margin-top:var(--sp-3xl)}
+footer .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:var(--max-wide);margin:0 auto}
+footer .ft-brand h4{font-family:var(--font-plain);font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:1rem;color:white}
+footer .ft-brand p{font-family:var(--font-plain);font-size:0.9rem;color:#999;line-height:1.7;max-width:480px}
+footer .ft-col h5{font-family:var(--font-ui);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--ciano-ss);margin-bottom:1rem}
+footer .ft-col p{font-family:var(--font-plain);font-size:0.85rem;color:#bbb;line-height:1.7}
+footer .ft-bottom{max-width:var(--max-wide);margin:var(--sp-2xl) auto 0;padding-top:1.5rem;border-top:1px solid #333;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer .ft-bottom span{font-family:var(--font-ui);font-size:0.7rem;color:#666;letter-spacing:0.1em;text-transform:uppercase}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media print{nav{display:none}main{margin-left:0}#cover{page-break-after:always;height:100vh}.section-divider{page-break-after:always}}
+
+@media(max-width:1000px){
+  nav{display:none}
+  main{margin-left:0}
+  .two-col,.tov-grid,.pillars-grid,.proof-grid,.primary-colors,.bg-usage,.service-colors,.type-comparison,.scale-grid,.hierarchy-examples,.icon-rules-grid{grid-template-columns:1fr}
+  .pillars-grid,.audience-list{grid-template-columns:repeat(2,1fr)}
+  .vocab-grid,.sp4,.sp3,.sp2{grid-template-columns:repeat(2,1fr)}
+  footer .ft-grid{grid-template-columns:1fr}
+  .section-divider,.content-section{padding:var(--sp-xl)}
+  .competitive-table{display:block;overflow-x:auto}
+}
+
+@media(max-width:600px){
+  .pillars-grid,.audience-list,.claim-formats{grid-template-columns:1fr}
+  .positioning-statement .ps-meta{grid-template-columns:1fr}
+  .scale-row,.icon-scale-row{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<nav>
+  <div class="nav-logo">Stampa<span class="nav-logo-e">e</span>Stampe<span class="nav-logo-tld">.it</span></div>
+
+  <div class="nav-section">Brand Strategy</div>
+  <a href="#strategy">01 — Tesi di marca</a>
+  <a href="#positioning">02 — Posizionamento</a>
+  <a href="#pillars">03 — Promessa & pilastri</a>
+  <a href="#audience">04 — Target</a>
+  <a href="#competitive">05 — Differenziazione</a>
+  <a href="#proof-points">06 — Asset distintivi</a>
+
+  <div class="nav-section">Tone of Voice</div>
+  <a href="#tov">07 — Linguaggio</a>
+  <a href="#vocab">08 — Vocabolario</a>
+  <a href="#message">09 — Messaggio guida</a>
+
+  <div class="nav-section">Identity</div>
+  <a href="#logo">10 — Logo</a>
+  <a href="#logo-clearspace">11 — Spazio libero</a>
+  <a href="#logo-variants">12 — Varianti logo</a>
+  <a href="#claim">13 — Claim</a>
+
+  <div class="nav-section">Color</div>
+  <a href="#color-primary">14 — Colori primari</a>
+  <a href="#color-palette">15 — Palette completa</a>
+  <a href="#color-subpalettes">16 — Sotto-palette</a>
+  <a href="#color-logo">17 — Colore + logo</a>
+  <a href="#color-service">18 — Colori di servizio</a>
+
+  <div class="nav-section">Typography</div>
+  <a href="#type-overview">19 — Plain</a>
+  <a href="#type-paragraph">20 — Paragrafi</a>
+  <a href="#type-hierarchy">21 — Gerarchia stili</a>
+
+  <div class="nav-section">Iconography</div>
+  <a href="#icons-scale">22 — Scala icone</a>
+  <a href="#icons-rules">23 — Regole d'uso</a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════ COVER ═══════════════════════ -->
+<section id="cover">
+  <div class="cover-meta">
+    <div class="cover-year">2026</div>
+    <div class="cover-ver">v.1.0 · Aprile 2026</div>
+  </div>
+  <div class="cover-label">Brand Manual</div>
+  <h1>Stampa<span class="h1-e">e</span><br>Stampe<span class="h1-tld">.it</span></h1>
+  <div class="cover-claim">Il tuo mondo in una Stampa.</div>
+  <div class="cover-bottom">
+    <span class="brand-name">Brand Manual · Strategia & Identità</span>
+    <span class="cover-info">Uso interno · Documento ufficiale</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER STRATEGY ═══════════════════════ -->
+<section class="section-divider sd-strategy">
+  <div class="sd-num">01</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 01 · Brand Strategy</span>
+    <h2>Chi siamo,<br>per chi parliamo,<br>cosa promettiamo.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: TESI ═══════════════════════ -->
+<section id="strategy" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">01 · Tesi di marca</span>
+    <h3>Non una tipografia.<br>Uno specialista affidabile.</h3>
+    <p>L'integrazione del report comparativo conferma che StampaeStampe occupa uno spazio ad alto valore nel mercato Web-to-Print: non il territorio del semplice volume, ma quello dello specialista capace di ridurre stress operativo, rischio tecnico e attriti logistici per agenzie, grafici, allestitori e rivenditori.</p>
+  </div>
+
+  <div class="thesis-block">
+    <span class="tb-label">Tesi guida</span>
+    <h3>StampaeStampe non deve apparire come una semplice tipografia online, ma come <span class="tb-highlight">specialista affidabile e ufficio tecnico esterno</span> per i professionisti.</h3>
+    <p class="tb-body">La promessa del brand evolve da "tipografia online efficiente" a partner che protegge il lavoro del professionista. Il professionista non compra solo stampa: compra riduzione del rischio, rapidità decisionale e qualcuno che si assuma responsabilità tecnica nei momenti critici.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>Customer Care al centro della proposta di valore.</strong> Non un servizio accessorio, ma il cuore della proposta: ufficio tecnico esterno, presidio consulenziale e filtro anti-errore per i progetti professionali.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: POSITIONING ═══════════════════════ -->
+<section id="positioning" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">02 · Posizionamento</span>
+    <h3>Positioning statement.</h3>
+    <p>Il posizionamento revisionato esprime in modo sintetico chi serviamo, cosa offriamo e perché veniamo scelti. È la cornice operativa di ogni decisione di comunicazione e prodotto.</p>
+  </div>
+
+  <div class="positioning-statement">
+    <span class="ps-label">Positioning statement</span>
+    <p class="ps-text">Per agenzie, grafici, rivenditori e professionisti della comunicazione visiva che cercano <em>eccellenza senza rischi</em>, StampaeStampe.it è il <em>partner specializzato</em> che unisce la velocità dell'online alla consulenza di un tecnico dedicato, offrendo supporti professionali, logistica affidabile e <em>soluzioni fuori standard</em> che vanno oltre il catalogo.</p>
+
+    <div class="ps-meta">
+      <div class="ps-meta-item">
+        <div class="ps-meta-label">Ruolo di mercato</div>
+        <div class="ps-meta-value">Specialista affidabile del grande formato.</div>
+      </div>
+      <div class="ps-meta-item">
+        <div class="ps-meta-label">Ruolo percepito</div>
+        <div class="ps-meta-value">Ufficio tecnico esterno che parla la lingua del grafico e dell'allestitore.</div>
+      </div>
+      <div class="ps-meta-item">
+        <div class="ps-meta-label">Promessa centrale</div>
+        <div class="ps-meta-value">Più controllo, meno rischi, più margine per il professionista.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: PILASTRI ═══════════════════════ -->
+<section id="pillars" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">03 · Promessa & pilastri</span>
+    <h3>Tre pilastri valoriali.</h3>
+    <p>La promessa di marca si articola in tre pilastri concreti, che guidano le scelte di prodotto, comunicazione e servizio.</p>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pc-num">01</div>
+      <h4>Riduzione del rischio operativo</h4>
+      <p>Errori file, supporti inadatti, finiture sbagliate, tempi di consegna che mettono a rischio il cliente finale. Il valore non è la sola stampa, ma l'abbattimento di errore tecnico, ristampa e contestazione.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pc-num">02</div>
+      <h4>Affidabilità logistica</h4>
+      <p>Nel grande formato l'imballo, la durata del supporto e la qualità dell'arrivo contano quanto la stampa. La cura dell'imballo diventa promessa commerciale: il prodotto deve arrivare integro, non solo uscire bene.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pc-num">03</div>
+      <h4>Tutela del margine</h4>
+      <p>Listini protetti, consulenza, prodotti fuori-standard e gestione custom rafforzano il ruolo di partner, non di semplice fornitore. Il programma PROWIS e le condizioni riservate proteggono la competitività del rivenditore.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: AUDIENCE ═══════════════════════ -->
+<section id="audience" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">04 · Target</span>
+    <h3>Per chi parliamo.</h3>
+    <p>Il nostro pubblico è composto da professionisti B2B che lavorano sotto pressione di scadenze e di responsabilità verso clienti finali. Persone che non comprano stampa: comprano serenità operativa.</p>
+  </div>
+
+  <div class="audience-list">
+    <div class="audience-chip">
+      <h5>Agenzie</h5>
+      <p>Studi di comunicazione che gestiscono progetti complessi e responsabilità verso clienti finali.</p>
+    </div>
+    <div class="audience-chip">
+      <h5>Grafici</h5>
+      <p>Designer e art director che hanno bisogno di un interlocutore tecnico competente sui file.</p>
+    </div>
+    <div class="audience-chip">
+      <h5>Rivenditori</h5>
+      <p>Professionisti che marginano sulla rivendita e che richiedono listini protetti e affidabilità.</p>
+    </div>
+    <div class="audience-chip">
+      <h5>Allestitori</h5>
+      <p>Specialisti del grande formato, fiere ed eventi: serve velocità, supporti tecnici e logistica certa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: COMPETITIVE ═══════════════════════ -->
+<section id="competitive" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">05 · Differenziazione</span>
+    <h3>Territorio competitivo.</h3>
+    <p>Il confronto competitivo chiarisce dove StampaeStampe deve presidiare la conversazione: non sul solo prezzo o sulla sola UX, ma sulla combinazione di specializzazione tecnica, affidabilità logistica e supporto umano.</p>
+  </div>
+
+  <table class="competitive-table">
+    <thead>
+      <tr>
+        <th>Driver di scelta</th>
+        <th class="us-col">StampaeStampe</th>
+        <th>Pixartprinting</th>
+        <th>PressUp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Territorio percepito</td>
+        <td class="us-col">Specialista grande formato e supporti rigidi</td>
+        <td>Generalista high-volume</td>
+        <td>Piccolo formato / editoria premium</td>
+      </tr>
+      <tr>
+        <td>Supporto tecnico</td>
+        <td class="us-col">Diretto e consulenziale</td>
+        <td>Ticket / flusso impersonale</td>
+        <td>Assistito ma meno industriale</td>
+      </tr>
+      <tr>
+        <td>Affidabilità imballo</td>
+        <td class="us-col">Massima</td>
+        <td>Media / discontinua</td>
+        <td>Buona</td>
+      </tr>
+      <tr>
+        <td>Valore per i PRO</td>
+        <td class="us-col">Riduce il rischio e tutela il margine</td>
+        <td>Ottimizza velocità e prezzo</td>
+        <td>Massimizza la resa editoriale</td>
+      </tr>
+      <tr>
+        <td>Ruolo ideale</td>
+        <td class="us-col">Partner operativo</td>
+        <td>Macchina di volume</td>
+        <td>Boutique di stampa</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="diff-formula">
+    <span class="df-label">Formula sintetica di differenziazione</span>
+    <p class="df-text">Più affidabile di un <strong>generalista</strong>.<br>Più operativo di una <strong>boutique editoriale</strong>.<br>Più umano di una <strong>piattaforma automatizzata</strong>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY: PROOF POINTS ═══════════════════════ -->
+<section id="proof-points" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">06 · Asset distintivi</span>
+    <h3>I nostri proof points.</h3>
+    <p>Quattro asset concreti da portare al centro della comunicazione: ognuno è una traduzione tangibile della promessa di marca.</p>
+  </div>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="pf-icon">01</div>
+      <h4>Ingegneria del packaging</h4>
+      <p>L'imballaggio va comunicato come protezione della reputazione del cliente finale. Non è logistica: è affidabilità percepita e riduzione dei resi.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">02</div>
+      <h4>Verticalità tecnica</h4>
+      <p>Grande formato, rigidi, tessuti tecnici, supporti outdoor, eco-friendly, ignifughi e finiture speciali: presidio specialistico raccontato come differenza competitiva.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">03</div>
+      <h4>Tutela del margine — PROWIS</h4>
+      <p>Il programma PROWIS e le condizioni riservate sono strumenti di partnership che proteggono la competitività del rivenditore, non semplici sconti.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">04</div>
+      <h4>Supporto human-to-human</h4>
+      <p>Il Customer Care va percepito come tecnico dedicato: qualcuno che risponde davvero, previene i problemi e gestisce i fuori standard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER VOICE ═══════════════════════ -->
+<section class="section-divider sd-voice">
+  <div class="sd-num">02</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 02 · Tone of Voice</span>
+    <h2>Come parliamo,<br>cosa diciamo,<br>cosa evitiamo.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TOV ═══════════════════════ -->
+<section id="tov" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">07 · Linguaggio</span>
+    <h3>Da evitare, da enfatizzare.</h3>
+    <p>La comunicazione deve costruire un contrasto chiaro con il modello "black box". Il configuratore gestisce lo standard; il valore di StampaeStampe inizia quando il progetto richiede verifica, materiali corretti, fattibilità, fuori-catalogo e responsabilità tecnica.</p>
+  </div>
+
+  <div class="tov-grid">
+    <div class="tov-card">
+      <div class="tc-head do-head">
+        <span class="th-icon do-icon">✓</span>
+        Da enfatizzare
+      </div>
+      <div class="tc-body">
+        <div class="tc-ex do-ex">"Confronto tecnico diretto, prevenzione dell'errore, affidabilità dell'arrivo."</div>
+        <div class="tc-ex do-ex">"Protezione del margine del rivenditore."</div>
+        <div class="tc-ex do-ex">"Soluzioni custom e fuori-catalogo per progetti complessi."</div>
+        <div class="tc-ex do-ex">"Un tecnico dedicato che parla la tua lingua."</div>
+      </div>
+    </div>
+    <div class="tov-card">
+      <div class="tc-head dont-head">
+        <span class="th-icon dont-icon">✕</span>
+        Da evitare
+      </div>
+      <div class="tc-body">
+        <div class="tc-ex dont-ex">Messaggi centrati solo sul prezzo basso.</div>
+        <div class="tc-ex dont-ex">Promesse di autonomia totale come unico beneficio.</div>
+        <div class="tc-ex dont-ex">Velocità raccontata come unico vantaggio competitivo.</div>
+        <div class="tc-ex dont-ex">Linguaggio impersonale o "black box".</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ VOCAB ═══════════════════════ -->
+<section id="vocab" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">08 · Vocabolario</span>
+    <h3>Territorio lessicale.</h3>
+    <p>Le parole che presidiamo nella comunicazione e nel customer care. Sono il vocabolario operativo di chiunque scriva o parli a nome del brand.</p>
+  </div>
+
+  <div class="vocab-grid">
+    <div class="vocab-chip">Specialista affidabile</div>
+    <div class="vocab-chip ciano-chip">Ufficio tecnico esterno</div>
+    <div class="vocab-chip">Supporto consulenziale</div>
+    <div class="vocab-chip rosso-chip">Controllo preventivo</div>
+    <div class="vocab-chip">Fuori standard</div>
+    <div class="vocab-chip ciano-chip">Partner operativo</div>
+    <div class="vocab-chip">Verticalità tecnica</div>
+    <div class="vocab-chip rosso-chip">Riduzione del rischio</div>
+    <div class="vocab-chip">Affidabilità logistica</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MESSAGE GUIDE ═══════════════════════ -->
+<section id="message" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">09 · Messaggio guida</span>
+    <h3>Il nostro vantaggio competitivo<br>in una frase.</h3>
+    <p>È la sintesi che ogni team interno deve avere chiara, prima di scrivere o parlare a nome del brand.</p>
+  </div>
+
+  <div class="message-guide">
+    <span class="mg-label">Messaggio guida</span>
+    <p class="mg-text">Il sito ti dà <strong>velocità</strong>.<br>Le persone di StampaeStampe ti danno <strong>controllo, soluzioni e margine di sicurezza</strong>.</p>
+  </div>
+
+  <div class="callout callout-warn">
+    <p><strong>Leadership takeaway.</strong> StampaeStampe non deve essere ricordata come "un sito dove ordinare stampe", ma come lo specialista affidabile che aiuta il professionista a consegnare bene, proteggere il margine e ridurre lo stress operativo. In una formula: il vero vantaggio competitivo è essere l'ufficio tecnico esterno delle agenzie.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER LOGO ═══════════════════════ -->
+<section class="section-divider sd-logo">
+  <div class="sd-num">03</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 03 · Logo</span>
+    <h2>L'icona visiva<br>del brand.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LOGO ═══════════════════════ -->
+<section id="logo" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">10 · Logo</span>
+    <h3>Il nostro logo.</h3>
+    <p>Utilizziamo il logo tradizionale a 3 colori ovunque sia possibile, ma soprattutto in contesti che richiedono un forte riconoscimento del marchio e un'elevata fiducia: homepage, email transazionali, comunicazioni promozionali e pagine aziendali. Il logo tradizionale si utilizza solo su sfondi bianchi e grigio chiari (#F1F1F1).</p>
+  </div>
+
+  <div class="logo-grid">
+    <div class="logo-box bg-white">
+      <div class="lb-preview">
+        <span class="logo-display heritage">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Heritage · 3 colori</h4>
+        <p>Versione principale, da utilizzare su fondo bianco o grigio chiaro (#F1F1F1).</p>
+      </div>
+    </div>
+    <div class="logo-box bg-grey">
+      <div class="lb-preview">
+        <span class="logo-display heritage">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Heritage su grigio chiaro</h4>
+        <p>Riconoscibilità ottimale anche su fondi neutri chiari come #F1F1F1.</p>
+      </div>
+    </div>
+    <div class="logo-box bg-black">
+      <div class="lb-preview">
+        <span class="logo-display heritage on-dark">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Logo bianco</h4>
+        <p>Utilizziamo il logo bianco su fondi neri, grigio scuro e su sfondi fotografici.</p>
+      </div>
+    </div>
+    <div class="logo-box bg-photo">
+      <div class="lb-preview">
+        <span class="logo-display heritage on-dark">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Su fotografia</h4>
+        <p>Su foto il logo è sempre bianco. In caso di poco contrasto, livello nero al 25% sotto al logo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LOGO CLEAR SPACE ═══════════════════════ -->
+<section id="logo-clearspace" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">11 · Spazio libero</span>
+    <h3>Clear space e scalability.</h3>
+    <p>Lo spazio libero è la quantità di spazio necessaria intorno al logo per massimizzarne visibilità e impatto. L'altezza "x" equivale sempre all'altezza della "S" maiuscola del logo. La dimensione minima sullo schermo è di 25 px di altezza.</p>
+  </div>
+
+  <div class="clearspace-diagram">
+    <div class="cs-frame">
+      <span class="logo-display heritage on-light" style="font-size:2rem">
+        <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="scale-row">
+    <div class="scale-item">
+      <span class="logo-display heritage on-light" style="font-size:2.4rem">
+        <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+      </span>
+      <span class="si-label">Display</span>
+    </div>
+    <div class="scale-item">
+      <span class="logo-display heritage on-light" style="font-size:1.5rem">
+        <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+      </span>
+      <span class="si-label">Standard</span>
+    </div>
+    <div class="scale-item">
+      <span class="logo-display heritage on-light" style="font-size:1rem">
+        <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+      </span>
+      <span class="si-label">Compatto</span>
+    </div>
+    <div class="scale-item">
+      <span class="logo-display heritage on-light" style="font-size:0.7rem">
+        <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+      </span>
+      <span class="si-label">Min · 25 px</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Container e avatar.</strong> Quando il container è piccolo, usare il logo bianco su sfondo scuro per massimizzare la leggibilità. Per i container dei canali social, dove le dimensioni sono molto ridotte, è consigliato l'uso dell'avatar (favicon a colori su fondo grigio chiaro).</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LOGO VARIANTS ═══════════════════════ -->
+<section id="logo-variants" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">12 · Varianti logo</span>
+    <h3>Heritage, B/W, tono su tono, contrasto.</h3>
+    <p>Quando si lavora in presenza di sfondi colorati o fotografici, è opportuno rendere il logo ben visibile. Quando si lavora con sfondi dai colori chiari, utilizzare la tonalità più scura del colore di sfondo per riempire il logo (almeno 5 tonalità di differenza nella stessa famiglia).</p>
+  </div>
+
+  <div class="logo-grid">
+    <div class="logo-box bg-white">
+      <div class="lb-preview">
+        <span class="logo-display heritage on-light">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>B/N — Logo nero</h4>
+        <p>Logo nero monocromatico su fondo bianco. Utilizzato in contesti tecnici o di stampa monocromatica.</p>
+      </div>
+    </div>
+    <div class="logo-box bg-black">
+      <div class="lb-preview">
+        <span class="logo-display heritage on-dark">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Negativo — Logo bianco</h4>
+        <p>Logo bianco su fondo nero, grigio scuro o sfondi fotografici.</p>
+      </div>
+    </div>
+    <div class="logo-box bg-ciano">
+      <div class="lb-preview">
+        <span class="logo-display heritage tono-su-tono" style="color:#005A87">
+          <span class="ld-stampa" style="color:#005A87">Stampa</span><span class="ld-e" style="color:#005A87">e</span><span class="ld-stampa" style="color:#005A87">Stampe</span><span class="ld-tld" style="color:#005A87">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Tono su tono (7 vs 1)</h4>
+        <p>Logo nella tonalità più scura della stessa famiglia di colore dello sfondo. Almeno 5 tonalità di scarto.</p>
+      </div>
+    </div>
+    <div class="logo-box bg-photo">
+      <div class="lb-preview">
+        <span class="logo-display heritage on-dark">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="lb-meta">
+        <h4>Contrasto — Su fotografia</h4>
+        <p>Su foto il logo è sempre bianco. Utilizziamo il più possibile composizioni pulite, con stile minimale.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Brand partnerships.</strong> Per le partnership tra marchi, mostriamo sia il nostro logo che quello del partner, separandoli con una "X" sui dispositivi grafici. Lo spazio tra ciascun logo e la "X" è pari allo spazio libero del logo StampaeStampe.it. Quando si ridimensionano i loghi, si parte dal nostro e si centra otticamente il logo del partner.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER CLAIM ═══════════════════════ -->
+<section class="section-divider sd-claim">
+  <div class="sd-num">04</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 04 · Claim</span>
+    <h2>Il tuo mondo<br>in una Stampa.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CLAIM ═══════════════════════ -->
+<section id="claim" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">13 · Claim</span>
+    <h3>Il tuo mondo in una Stampa.</h3>
+    <p>Il claim rafforza i valori del marchio e crea un legame emotivo con il pubblico. Funziona anche come elemento grafico, migliorando l'equilibrio del layout. Per mantenerne impatto e risonanza è importante utilizzarlo con parsimonia: un uso eccessivo ne riduce l'efficacia.</p>
+  </div>
+
+  <div class="claim-display">
+    <div class="cd-text">Il tuo mondo<br>in una Stampa.</div>
+    <div class="cd-author">Claim ufficiale · StampaeStampe.it</div>
+  </div>
+
+  <div style="margin-top:var(--sp-xl)">
+    <h4 style="font-family:var(--font-plain);font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.75rem">Posizionamento e disposizione.</h4>
+    <p style="font-family:var(--font-plain);font-size:0.95rem;color:#555;line-height:1.65;max-width:720px">Nella maggior parte dei casi, posizioniamo il claim sotto al logo. In composizioni grafiche più articolate può essere utilizzato separatamente: nei formati orizzontali (16:9) il logo va in basso a sinistra e il claim in basso a destra. Nei formati verticali (9:16) il logo va in alto a destra e il claim in basso a sinistra. Maggiore flessibilità è possibile per usi di forte impatto come le animazioni.</p>
+  </div>
+
+  <div class="claim-formats">
+    <div class="claim-format">
+      <div class="cf-label">Formato 16:9 — Orizzontale</div>
+      <div class="cf-content">Una<br>consulenza<br>fuori standard.</div>
+      <div class="cf-bottom">
+        <span class="logo-display heritage on-light" style="font-size:1.1rem">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+        <span style="font-weight:600">Il tuo mondo in una Stampa.</span>
+      </div>
+    </div>
+    <div class="claim-format cf-vertical">
+      <div>
+        <div class="cf-label" style="text-align:right">Formato 9:16 — Verticale</div>
+        <div style="text-align:right;margin-top:0.5rem">
+          <span class="logo-display heritage on-light" style="font-size:1rem">
+            <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+          </span>
+        </div>
+      </div>
+      <div class="cf-content">Una<br>consulenza<br>fuori standard.</div>
+      <div class="cf-bottom" style="border-top:none;padding-top:0">
+        <span style="font-weight:600">Il tuo mondo in una Stampa.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER COLOR ═══════════════════════ -->
+<section class="section-divider sd-color">
+  <div class="sd-num">05</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 05 · Color System</span>
+    <h2>3 primari.<br>120 sfumature.<br>Un sistema.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOR PRIMARY ═══════════════════════ -->
+<section id="color-primary" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">14 · Colori primari</span>
+    <h3>I 3 colori del logo.</h3>
+    <p>I nostri colori principali sono i 3 colori del logo. Rappresentano la storia del nostro marchio e costituiscono la base della palette completa.</p>
+  </div>
+
+  <div class="primary-colors">
+    <div class="primary-swatch sw-nero">
+      <div class="ps-color">Nero S&amp;S</div>
+      <div class="ps-meta">
+        <div class="ps-name">Nero S&amp;S</div>
+        <div class="ps-codes">
+          <div><strong>HEX</strong> · #000000</div>
+          <div><strong>RGB</strong> · 0 / 0 / 0</div>
+          <div><strong>CMYK</strong> · 0 / 0 / 0 / 100</div>
+        </div>
+      </div>
+    </div>
+    <div class="primary-swatch sw-ciano">
+      <div class="ps-color">Ciano S&amp;S</div>
+      <div class="ps-meta">
+        <div class="ps-name">Ciano S&amp;S</div>
+        <div class="ps-codes">
+          <div><strong>HEX</strong> · #0097E3</div>
+          <div><strong>RGB</strong> · 0 / 151 / 227</div>
+          <div><strong>CMYK</strong> · 100 / 33 / 0 / 11</div>
+        </div>
+      </div>
+    </div>
+    <div class="primary-swatch sw-rosso">
+      <div class="ps-color">Rosso S&amp;S</div>
+      <div class="ps-meta">
+        <div class="ps-name">Rosso S&amp;S</div>
+        <div class="ps-codes">
+          <div><strong>HEX</strong> · #CF2517</div>
+          <div><strong>RGB</strong> · 207 / 37 / 23</div>
+          <div><strong>CMYK</strong> · 0 / 82 / 89 / 19</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOR PALETTE ═══════════════════════ -->
+<section id="color-palette" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">15 · Palette completa</span>
+    <h3>10 famiglie · 12 toni · 120 colori.</h3>
+    <p>Abbiamo 10 famiglie di colori (incluso il nero) con 12 tonalità in ogni famiglia, per un totale di 120 colori nella palette completa. Utilizziamo sottoinsiemi di questa palette, abbinando le famiglie in gruppi di 4, 3 o 2 colori per caratterizzare prodotti, sezioni o tematiche diverse.</p>
+  </div>
+
+  <div class="palette-matrix">
+    <div class="palette-header">
+      <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+    </div>
+    <!-- Nero S&S -->
+    <div class="palette-row">
+      <span class="palette-label">Nero S&amp;S</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#1A1A1A"></div>
+      <div class="palette-cell" style="background:#2E2E2E"></div>
+      <div class="palette-cell" style="background:#454545"></div>
+      <div class="palette-cell" style="background:#5C5C5C"></div>
+      <div class="palette-cell" style="background:#707070"></div>
+      <div class="palette-cell" style="background:#8A8A8A"></div>
+      <div class="palette-cell" style="background:#A3A3A3"></div>
+      <div class="palette-cell" style="background:#BFBFBF"></div>
+      <div class="palette-cell" style="background:#D4D4D4"></div>
+      <div class="palette-cell" style="background:#E8E8E8"></div>
+      <div class="palette-cell" style="background:#F5F5F5"></div>
+    </div>
+    <!-- Rosso S&S -->
+    <div class="palette-row">
+      <span class="palette-label">Rosso S&amp;S</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#3D0A06"></div>
+      <div class="palette-cell" style="background:#5C0F0A"></div>
+      <div class="palette-cell" style="background:#7A1610"></div>
+      <div class="palette-cell" style="background:#A11D14"></div>
+      <div class="palette-cell" style="background:#CF2517"></div>
+      <div class="palette-cell" style="background:#E04A3D"></div>
+      <div class="palette-cell" style="background:#E47872"></div>
+      <div class="palette-cell" style="background:#EE9D99"></div>
+      <div class="palette-cell" style="background:#F4C9C5"></div>
+      <div class="palette-cell" style="background:#F9E2DF"></div>
+      <div class="palette-cell" style="background:#FCF1F0"></div>
+    </div>
+    <!-- Magenta -->
+    <div class="palette-row">
+      <span class="palette-label">Magenta</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#2E0820"></div>
+      <div class="palette-cell" style="background:#4D0E36"></div>
+      <div class="palette-cell" style="background:#6D154E"></div>
+      <div class="palette-cell" style="background:#9C1D6E"></div>
+      <div class="palette-cell" style="background:#D31C84"></div>
+      <div class="palette-cell" style="background:#E25BA0"></div>
+      <div class="palette-cell" style="background:#EA8BB9"></div>
+      <div class="palette-cell" style="background:#F1B0CD"></div>
+      <div class="palette-cell" style="background:#F7D2DF"></div>
+      <div class="palette-cell" style="background:#FBE6EE"></div>
+      <div class="palette-cell" style="background:#FDF3F7"></div>
+    </div>
+    <!-- Viola -->
+    <div class="palette-row">
+      <span class="palette-label">Viola</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#1F0830"></div>
+      <div class="palette-cell" style="background:#370F50"></div>
+      <div class="palette-cell" style="background:#52167A"></div>
+      <div class="palette-cell" style="background:#751DB0"></div>
+      <div class="palette-cell" style="background:#9D24E0"></div>
+      <div class="palette-cell" style="background:#B056EB"></div>
+      <div class="palette-cell" style="background:#C385F1"></div>
+      <div class="palette-cell" style="background:#D6ABF5"></div>
+      <div class="palette-cell" style="background:#E6CCF8"></div>
+      <div class="palette-cell" style="background:#F1E2FB"></div>
+      <div class="palette-cell" style="background:#F8F2FD"></div>
+    </div>
+    <!-- Indaco -->
+    <div class="palette-row">
+      <span class="palette-label">Indaco</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#0A0E33"></div>
+      <div class="palette-cell" style="background:#11154E"></div>
+      <div class="palette-cell" style="background:#1B1F75"></div>
+      <div class="palette-cell" style="background:#272BA8"></div>
+      <div class="palette-cell" style="background:#3A40D9"></div>
+      <div class="palette-cell" style="background:#5F65E5"></div>
+      <div class="palette-cell" style="background:#888BEC"></div>
+      <div class="palette-cell" style="background:#AFB1F2"></div>
+      <div class="palette-cell" style="background:#CDCFF6"></div>
+      <div class="palette-cell" style="background:#E2E3FA"></div>
+      <div class="palette-cell" style="background:#F1F1FC"></div>
+    </div>
+    <!-- Ciano S&S -->
+    <div class="palette-row">
+      <span class="palette-label">Ciano S&amp;S</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#022134"></div>
+      <div class="palette-cell" style="background:#033A5D"></div>
+      <div class="palette-cell" style="background:#055A87"></div>
+      <div class="palette-cell" style="background:#0078B5"></div>
+      <div class="palette-cell" style="background:#0097E3"></div>
+      <div class="palette-cell" style="background:#3DB1ED"></div>
+      <div class="palette-cell" style="background:#76C7F2"></div>
+      <div class="palette-cell" style="background:#A8DBF6"></div>
+      <div class="palette-cell" style="background:#CDE9FA"></div>
+      <div class="palette-cell" style="background:#E1F2FC"></div>
+      <div class="palette-cell" style="background:#F1F8FE"></div>
+    </div>
+    <!-- Blu -->
+    <div class="palette-row">
+      <span class="palette-label">Blu</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#001736"></div>
+      <div class="palette-cell" style="background:#002558"></div>
+      <div class="palette-cell" style="background:#003782"></div>
+      <div class="palette-cell" style="background:#004CB0"></div>
+      <div class="palette-cell" style="background:#0066E0"></div>
+      <div class="palette-cell" style="background:#3585E8"></div>
+      <div class="palette-cell" style="background:#6CA6EE"></div>
+      <div class="palette-cell" style="background:#9CC4F3"></div>
+      <div class="palette-cell" style="background:#C2DCF7"></div>
+      <div class="palette-cell" style="background:#DCEAFB"></div>
+      <div class="palette-cell" style="background:#EEF5FD"></div>
+    </div>
+    <!-- Blu Elettrico -->
+    <div class="palette-row">
+      <span class="palette-label">Blu Elettrico</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#080436"></div>
+      <div class="palette-cell" style="background:#0F0858"></div>
+      <div class="palette-cell" style="background:#180D80"></div>
+      <div class="palette-cell" style="background:#2113B5"></div>
+      <div class="palette-cell" style="background:#2C19E5"></div>
+      <div class="palette-cell" style="background:#5443EC"></div>
+      <div class="palette-cell" style="background:#8077F1"></div>
+      <div class="palette-cell" style="background:#A7A1F6"></div>
+      <div class="palette-cell" style="background:#C8C5FA"></div>
+      <div class="palette-cell" style="background:#DEDDFC"></div>
+      <div class="palette-cell" style="background:#EFEEFE"></div>
+    </div>
+    <!-- Teal -->
+    <div class="palette-row">
+      <span class="palette-label">Teal</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#001E1B"></div>
+      <div class="palette-cell" style="background:#003330"></div>
+      <div class="palette-cell" style="background:#004B47"></div>
+      <div class="palette-cell" style="background:#006963"></div>
+      <div class="palette-cell" style="background:#008A82"></div>
+      <div class="palette-cell" style="background:#2DAAA1"></div>
+      <div class="palette-cell" style="background:#67C2BB"></div>
+      <div class="palette-cell" style="background:#9BD9D4"></div>
+      <div class="palette-cell" style="background:#C5E9E6"></div>
+      <div class="palette-cell" style="background:#DEF2F0"></div>
+      <div class="palette-cell" style="background:#EFF8F7"></div>
+    </div>
+    <!-- Verde -->
+    <div class="palette-row">
+      <span class="palette-label">Verde</span>
+      <div class="palette-cell" style="background:#000000"></div>
+      <div class="palette-cell" style="background:#001E0E"></div>
+      <div class="palette-cell" style="background:#003317"></div>
+      <div class="palette-cell" style="background:#004B22"></div>
+      <div class="palette-cell" style="background:#006830"></div>
+      <div class="palette-cell" style="background:#008A40"></div>
+      <div class="palette-cell" style="background:#2DAA66"></div>
+      <div class="palette-cell" style="background:#69C290"></div>
+      <div class="palette-cell" style="background:#9DD9B4"></div>
+      <div class="palette-cell" style="background:#C7E9D2"></div>
+      <div class="palette-cell" style="background:#DFF2E5"></div>
+      <div class="palette-cell" style="background:#F0F8F3"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Quando usare cosa.</strong> Quando il pubblico non è presente sulla piattaforma o è più distante dal prodotto, utilizziamo una palette più limitata per rafforzare il riconoscimento del marchio. Quando i clienti sono sulla piattaforma o vicini al prodotto, usiamo una palette più ampia per esprimerci con maggiore audacia.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOR SUBPALETTES ═══════════════════════ -->
+<section id="color-subpalettes" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">16 · Sotto-palette</span>
+    <h3>Combinazioni 4 / 3 / 2 colori.</h3>
+    <p>Le sotto-palette pre-definite nascono per caratterizzare prodotti, sezioni o tematiche diverse mantenendo coerenza visiva. Si utilizzano sempre famiglie diverse, mai più toni della stessa famiglia.</p>
+  </div>
+
+  <div class="subpalette-section">
+    <h4>4 colori</h4>
+    <p>Combinazioni di quattro famiglie diverse, ideali per contesti ricchi di varietà visiva.</p>
+    <div class="subpalette-grid sp4">
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#D31C84"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+        <div class="spb-cell" style="background:#3A40D9"></div>
+        <div class="spb-cell" style="background:#0097E3"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#CF2517"></div>
+        <div class="spb-cell" style="background:#D31C84"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+        <div class="spb-cell" style="background:#0097E3"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#9D24E0"></div>
+        <div class="spb-cell" style="background:#0097E3"></div>
+        <div class="spb-cell" style="background:#0066E0"></div>
+        <div class="spb-cell" style="background:#008A82"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#0097E3"></div>
+        <div class="spb-cell" style="background:#2C19E5"></div>
+        <div class="spb-cell" style="background:#008A82"></div>
+        <div class="spb-cell" style="background:#008A40"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subpalette-section">
+    <h4>3 colori</h4>
+    <p>Combinazioni più focalizzate per messaggi e prodotti specifici.</p>
+    <div class="subpalette-grid sp3">
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#CF2517"></div>
+        <div class="spb-cell" style="background:#D31C84"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#D31C84"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+        <div class="spb-cell" style="background:#0097E3"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#CF2517"></div>
+        <div class="spb-cell" style="background:#3A40D9"></div>
+        <div class="spb-cell" style="background:#0097E3"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#0097E3"></div>
+        <div class="spb-cell" style="background:#008A82"></div>
+        <div class="spb-cell" style="background:#008A40"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subpalette-section">
+    <h4>2 colori</h4>
+    <p>Combinazioni minime, per ambiti che richiedono massima sintesi visiva e riconoscibilità.</p>
+    <div class="subpalette-grid sp2">
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#CF2517"></div>
+        <div class="spb-cell" style="background:#D31C84"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#CF2517"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#0097E3"></div>
+        <div class="spb-cell" style="background:#9D24E0"></div>
+      </div>
+      <div class="subpalette-block">
+        <div class="spb-cell" style="background:#0097E3"></div>
+        <div class="spb-cell" style="background:#008A82"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOR + LOGO ═══════════════════════ -->
+<section id="color-logo" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">17 · Colore + logo</span>
+    <h3>Logo su fotografia, colore, neutri.</h3>
+    <p>Il logo può essere utilizzato su sfondi fotografici, a colori e neutri. Il colore del logo dipende dallo sfondo su cui viene utilizzato. Le stesse regole valgono per la tipografia.</p>
+  </div>
+
+  <div class="bg-usage">
+    <div class="bg-usage-card buc-photo">
+      <div class="buc-preview">
+        <span class="logo-display heritage on-dark" style="font-size:1.6rem">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="buc-meta">
+        <h4>Sulla fotografia</h4>
+        <p>Quando utilizzato direttamente su una fotografia, il logo è sempre bianco. Foto con pochi elementi distrattivi e composizioni pulite. In caso di poco contrasto, livello nero al 25% sotto al logo.</p>
+      </div>
+    </div>
+    <div class="bg-usage-card buc-color">
+      <div class="buc-preview">
+        <span class="logo-display heritage" style="color:#055A87;font-size:1.6rem">
+          <span class="ld-stampa" style="color:#055A87">Stampa</span><span class="ld-e" style="color:#055A87">e</span><span class="ld-stampa" style="color:#055A87">Stampe</span><span class="ld-tld" style="color:#055A87">.it</span>
+        </span>
+      </div>
+      <div class="buc-meta">
+        <h4>Sul colore</h4>
+        <p>Su sfondi colorati applichiamo il tono su tono: il logo dovrà essere del colore più scuro rispetto allo sfondo (sfondi chiari) o più chiaro (sfondi scuri). Differenza di almeno 5 tonalità nella stessa famiglia.</p>
+      </div>
+    </div>
+    <div class="bg-usage-card buc-neutral">
+      <div class="buc-preview">
+        <span class="logo-display heritage on-light" style="font-size:1.6rem">
+          <span class="ld-stampa">Stampa</span><span class="ld-e">e</span><span class="ld-stampa">Stampe</span><span class="ld-tld">.it</span>
+        </span>
+      </div>
+      <div class="buc-meta">
+        <h4>Sui neutri</h4>
+        <p>Il logo a 3 colori si utilizza su sfondi bianchi e grigio chiari (#F1F1F1). Sui neutri, anche la tipografia è neutra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOR SERVICE ═══════════════════════ -->
+<section id="color-service" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">18 · Colori di servizio</span>
+    <h3>Colori terziari semantici.</h3>
+    <p>Una variante del colore d'accento è il colore d'azione, che ha lo scopo di spingere l'utente verso un'azione ben determinata. I colori di servizio (terziari) trasmettono significati semantici precisi all'interno dell'interfaccia.</p>
+  </div>
+
+  <div class="service-colors">
+    <div class="service-card">
+      <div class="sc-tags">
+        <span class="service-tag t-evidenza">In evidenza</span>
+        <span class="service-tag t-evidenza">Affidabilità</span>
+        <span class="service-tag t-evidenza">Nuovo Prodotto</span>
+      </div>
+      <h4>Colore d'accento — Evidenza</h4>
+      <p>Utilizza il colore principale del marchio per attirare l'attenzione su informazioni o azioni importanti. Non indica un sentimento positivo o negativo: ha lo scopo di guidare l'utente su elementi di interesse. <strong style="color:#0097E3">#0097E3</strong></p>
+    </div>
+    <div class="service-card">
+      <div class="sc-tags">
+        <span class="service-tag t-successo">Confermato</span>
+        <span class="service-tag t-successo">Sicurezza</span>
+        <span class="service-tag t-successo">Procedi</span>
+      </div>
+      <h4>Successo — Convalida</h4>
+      <p>Indica convalida e risparmio. Trasmette un sentimento positivo e viene usato per messaggi di successo, indicatori di conferma e tendenze positive. <strong style="color:#00785F">#00957A</strong></p>
+    </div>
+    <div class="service-card">
+      <div class="sc-tags">
+        <span class="service-tag t-attenzione">Attenzione</span>
+        <span class="service-tag t-attenzione">Urgenza</span>
+        <span class="service-tag t-attenzione">Non completato</span>
+      </div>
+      <h4>Critico — Attenzione</h4>
+      <p>Indica tendenze negative, azioni distruttive, contenuti con scadenza ravvicinata e altre notifiche che richiedono un'attenzione urgente: stati di errore, pulsanti per l'eliminazione, tempo limitato rimanente. <strong style="color:#CF2517">#FA6C71</strong></p>
+    </div>
+    <div class="service-card">
+      <div class="sc-tags">
+        <span class="service-tag t-neutral">Primario</span>
+        <span class="service-tag t-neutral">Secondario</span>
+        <span class="service-tag t-neutral">Terziario</span>
+      </div>
+      <h4>Neutri — Informativi</h4>
+      <p>Si utilizzano in diverse tonalità per contenuti informativi, selezionabili o disattivabili: titoli di elementi, avvisi informativi, pulsanti di opzione e link testuali.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:var(--sp-2xl)">
+    <h4 style="font-family:var(--font-plain);font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:1rem">Modalità chiara e modalità scura.</h4>
+    <p style="font-family:var(--font-plain);font-size:0.95rem;color:#555;line-height:1.65;max-width:720px;margin-bottom:1.25rem">Ogni colore di sfondo e di primo piano ha la sua coppia equivalente in modalità chiara e scura, per garantire leggibilità e accessibilità ottimali.</p>
+  </div>
+
+  <div class="mode-comparison">
+    <table class="mode-table">
+      <thead>
+        <tr>
+          <th>Tipologia</th>
+          <th>Modalità chiara</th>
+          <th>Modalità scura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Background primario</td>
+          <td><span class="hex-pill" style="--hex-color:#FFFFFF">#FFFFFF</span></td>
+          <td><span class="hex-pill" style="--hex-color:#000000">#000000</span></td>
+        </tr>
+        <tr>
+          <td>Background secondario</td>
+          <td><span class="hex-pill" style="--hex-color:#F1F1F1">#F1F1F1</span></td>
+          <td><span class="hex-pill" style="--hex-color:#191919">#191919</span></td>
+        </tr>
+        <tr>
+          <td>Background terziario</td>
+          <td><span class="hex-pill" style="--hex-color:#E3E3E3">#E3E3E3</span></td>
+          <td><span class="hex-pill" style="--hex-color:#363636">#363636</span></td>
+        </tr>
+        <tr>
+          <td>Background evidenza</td>
+          <td><span class="hex-pill" style="--hex-color:#009AE9">#009AE9</span></td>
+          <td><span class="hex-pill" style="--hex-color:#539EF3">#539EF3</span></td>
+        </tr>
+        <tr>
+          <td>Background successo</td>
+          <td><span class="hex-pill" style="--hex-color:#00957A">#00957A</span></td>
+          <td><span class="hex-pill" style="--hex-color:#51CEBA">#51CEBA</span></td>
+        </tr>
+        <tr>
+          <td>Background attenzione</td>
+          <td><span class="hex-pill" style="--hex-color:#CF2517">#009AE9</span></td>
+          <td><span class="hex-pill" style="--hex-color:#FA6C71">#FA6C71</span></td>
+        </tr>
+        <tr>
+          <td>Background disabilitato</td>
+          <td><span class="hex-pill" style="--hex-color:#CACACA">#CACACA</span></td>
+          <td><span class="hex-pill" style="--hex-color:#707070">#707070</span></td>
+        </tr>
+        <tr>
+          <td>Primo piano primario</td>
+          <td><span class="hex-pill" style="--hex-color:#000000">#000000</span></td>
+          <td><span class="hex-pill" style="--hex-color:#FFFFFF">#FFFFFF</span></td>
+        </tr>
+        <tr>
+          <td>Primo piano secondario</td>
+          <td><span class="hex-pill" style="--hex-color:#707070">#707070</span></td>
+          <td><span class="hex-pill" style="--hex-color:#CACACA">#CACACA</span></td>
+        </tr>
+        <tr>
+          <td>Primo piano disabilitato</td>
+          <td><span class="hex-pill" style="--hex-color:#CACACA">#CACACA</span></td>
+          <td><span class="hex-pill" style="--hex-color:#707070">#707070</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER TYPE ═══════════════════════ -->
+<section class="section-divider sd-type">
+  <div class="sd-num">06</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 06 · Typography</span>
+    <h2>Plain.<br>La nostra<br>famiglia tipografica.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TYPE OVERVIEW ═══════════════════════ -->
+<section id="type-overview" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">19 · Plain</span>
+    <h3>Plain — Regular & Bold.</h3>
+    <p>Plain è la famiglia tipografica ufficiale di StampaeStampe. È stata scelta rispetto a Inter Medium per maggiore compattezza e consistenza, minor presenza di rastremature che complicano la lettura sul digitale, e maggiore coerenza con le forme del logo.</p>
+  </div>
+
+  <div class="type-specimen">
+    <div class="ts-header">
+      <h4>Plain Bold</h4>
+      <span class="ts-name">Display · Titoli · Heading</span>
+    </div>
+    <div class="ts-demo">
+      <div class="ts-alphabet">ABCDEFGHIJKLMN<br>OPQRSTUVWXYZ<br>0123456789</div>
+    </div>
+    <div class="ts-meta">
+      <span><strong>Weight:</strong> 700</span>
+      <span><strong>Use:</strong> Titoli, heading, claim</span>
+      <span><strong>Letter spacing:</strong> -2% / -4%</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="ts-header">
+      <h4>Plain Regular</h4>
+      <span class="ts-name">Body · Caption · Disclaimer</span>
+    </div>
+    <div class="ts-demo">
+      <div class="ts-alphabet regular">ABCDEFGHIJKLMN<br>OPQRSTUVWXYZ<br>0123456789</div>
+    </div>
+    <div class="ts-meta">
+      <span><strong>Weight:</strong> 400</span>
+      <span><strong>Use:</strong> Body copy, caption, disclaimer, link</span>
+      <span><strong>Letter spacing:</strong> 0% / +5%</span>
+    </div>
+  </div>
+
+  <div class="type-comparison">
+    <div class="type-comparison-card">
+      <h5>Inter Medium</h5>
+      <div class="tcc-sample" style="font-weight:500;color:var(--ciano-ss)">Stampati</div>
+      <p>Maggiore presenza di rastremature, leggermente meno compatto sul digitale e meno coerente con le forme geometriche del logo.</p>
+    </div>
+    <div class="type-comparison-card">
+      <h5>Plain Medium — Scelta ufficiale</h5>
+      <div class="tcc-sample" style="font-weight:500;color:var(--black)">Stampati</div>
+      <p>Maggiore compattezza e consistenza, minor presenza di rastremature, più coerenza con le forme del logo. Migliore leggibilità in paragrafo.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Quattro pesi tipografici.</strong> <strong>Plain Bold</strong> per i titoli. <strong>Plain Medium</strong> per i sottotitoli. <strong>Plain Regular</strong> per il body copy e i testi più lunghi. <strong>Plain Regular</strong> anche per caption, disclaimer e testi che hanno dei link.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TYPE PARAGRAPH ═══════════════════════ -->
+<section id="type-paragraph" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">20 · Lunghezza paragrafo</span>
+    <h3>Regole per la leggibilità.</h3>
+    <p>La lunghezza del paragrafo influisce sulla leggibilità. Definiamo intervalli ottimali di caratteri per riga per garantire un'esperienza di lettura confortevole su ogni dispositivo.</p>
+  </div>
+
+  <div class="paragraph-rules">
+    <div class="paragraph-rule">
+      <div class="pr-status ko">✕</div>
+      <div class="pr-text"><strong>Troppo lungo · 130+ caratteri.</strong> Le righe troppo larghe affaticano la lettura: l'occhio si perde nel ritorno a capo, la comprensione cala drasticamente.</div>
+      <div class="pr-range" style="background:#FEF2F2;color:#CF2517;border-color:#F4C9C5">130+</div>
+    </div>
+    <div class="paragraph-rule">
+      <div class="pr-status ok">✓</div>
+      <div class="pr-text"><strong>Lunghezza ideale · 80 caratteri.</strong> Lunghezza ottimale per testi su desktop. Garantisce un buon ritmo di lettura e una corretta gerarchia visiva.</div>
+      <div class="pr-range">80</div>
+    </div>
+    <div class="paragraph-rule">
+      <div class="pr-status ok">✓</div>
+      <div class="pr-text"><strong>Compatto · 32 caratteri.</strong> Lunghezza adatta a contesti mobile e a colonne strette. Mantiene una buona leggibilità anche su schermi piccoli.</div>
+      <div class="pr-range">32</div>
+    </div>
+    <div class="paragraph-rule">
+      <div class="pr-status ko">✕</div>
+      <div class="pr-text"><strong>Troppo corto · 20 caratteri o meno.</strong> Righe troppo corte spezzano il ritmo di lettura, costringendo l'occhio a continui ritorni a capo.</div>
+      <div class="pr-range" style="background:#FEF2F2;color:#CF2517;border-color:#F4C9C5">&lt;20</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TYPE HIERARCHY ═══════════════════════ -->
+<section id="type-hierarchy" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">21 · Gerarchia stili</span>
+    <h3>15 stili tipografici.</h3>
+    <p>Un sapiente utilizzo di variazioni di dimensione e spessore dei caratteri ci permette di trasmettere un ordine logico e una fluidità ai blocchi di testo. Una gerarchia chiara garantisce che le informazioni più importanti vengano messe in evidenza per prime. Abbiamo creato 15 stili diversi, ognuno con valori predefiniti di peso, dimensione, interlinea e spaziatura.</p>
+  </div>
+
+  <table class="hierarchy-table">
+    <thead>
+      <tr>
+        <th>Stile</th>
+        <th>Peso</th>
+        <th>Dimensione</th>
+        <th>Tracking</th>
+        <th>Utilizzo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ht-style-name" style="font-size:1.6rem">Display+</td>
+        <td>Bold</td>
+        <td class="ht-size">46+ px</td>
+        <td class="ht-size">-4%</td>
+        <td>Titoli header</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1.4rem">Display 1</td>
+        <td>Bold</td>
+        <td class="ht-size">46 px</td>
+        <td class="ht-size">-2%</td>
+        <td>Titoli hero, header schermo large</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1.3rem">Display 2</td>
+        <td>Bold</td>
+        <td class="ht-size">36 px</td>
+        <td class="ht-size">-2%</td>
+        <td>Titoli banner</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1.2rem">Display 3</td>
+        <td>Bold</td>
+        <td class="ht-size">30 px</td>
+        <td class="ht-size">-2%</td>
+        <td>Titoli di paragrafo</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1.05rem">Titolo 1</td>
+        <td>Bold</td>
+        <td class="ht-size">24 px</td>
+        <td class="ht-size">0%</td>
+        <td>Titoli sezione</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1rem">Titolo 2</td>
+        <td>Bold</td>
+        <td class="ht-size">20 px</td>
+        <td class="ht-size">0%</td>
+        <td>Titoli card prodotto, attributi</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:1rem">Sottotitolo 1</td>
+        <td>Medium</td>
+        <td class="ht-size">20 px</td>
+        <td class="ht-size">0%</td>
+        <td>Nome / tipologia attributo</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name">Sottotitolo 2</td>
+        <td>Medium</td>
+        <td class="ht-size">16 px</td>
+        <td class="ht-size">0%</td>
+        <td>Voci di menu, prezzi card, voci scontrino</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name">Body</td>
+        <td>Regular</td>
+        <td class="ht-size">14 px</td>
+        <td class="ht-size">0%</td>
+        <td>Body descrizione</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:0.9rem">Body Grassetto</td>
+        <td>Bold</td>
+        <td class="ht-size">14 px</td>
+        <td class="ht-size">0%</td>
+        <td>Enfasi nel body</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:0.85rem">Didascalia</td>
+        <td>Regular</td>
+        <td class="ht-size">12 px</td>
+        <td class="ht-size">0%</td>
+        <td>Prezzi barrati card prodotto, disclaimer</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:0.85rem">Segnale 1</td>
+        <td>Bold</td>
+        <td class="ht-size">14 px</td>
+        <td class="ht-size">+5%</td>
+        <td>Breadcrumb</td>
+      </tr>
+      <tr>
+        <td class="ht-style-name" style="font-size:0.7rem">Segnale 2</td>
+        <td>Bold</td>
+        <td class="ht-size">10 px</td>
+        <td class="ht-size">+5%</td>
+        <td>Tag, chip, label</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:var(--sp-2xl)">
+    <h4 style="font-family:var(--font-plain);font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem">Scalabilità su schermi diversi.</h4>
+    <p style="font-family:var(--font-plain);font-size:0.95rem;color:#555;line-height:1.65;max-width:720px">Ogni stile di testo si adatta alle dimensioni dello schermo, da quelle piccole a quelle grandi. Il ridimensionamento dinamico garantisce che ogni pagina e componente mantenga gerarchia e armonia visiva. Il comportamento di ridimensionamento è integrato in ogni componente; alcuni componenti ridimensionano il testo in modo diverso e in questi casi si procede a una revisione manuale.</p>
+  </div>
+
+  <div class="scale-grid">
+    <div class="scale-item-block">
+      <div class="sib-screen">Schermo Small</div>
+      <div class="sib-styles">
+        <span style="font-size:1.5rem">Display+</span>
+        <span style="font-size:1.25rem">Display 1 — 46 px</span>
+        <span style="font-size:1.05rem">Display 2 — 36 px</span>
+        <span style="font-size:0.95rem">Body — 14 px</span>
+      </div>
+    </div>
+    <div class="scale-item-block">
+      <div class="sib-screen">Schermo Medium</div>
+      <div class="sib-styles">
+        <span style="font-size:1.6rem">Display+</span>
+        <span style="font-size:1.35rem">Display 1 — 46 px</span>
+        <span style="font-size:1.1rem">Display 2 — 36 px</span>
+        <span style="font-size:0.95rem">Body — 14 px</span>
+      </div>
+    </div>
+    <div class="scale-item-block">
+      <div class="sib-screen">Schermo Large</div>
+      <div class="sib-styles">
+        <span style="font-size:1.75rem">Display+</span>
+        <span style="font-size:1.45rem">Display 1 — 46 px</span>
+        <span style="font-size:1.15rem">Display 2 — 36 px</span>
+        <span style="font-size:0.95rem">Body — 14 px</span>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="font-family:var(--font-plain);font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;margin-top:var(--sp-2xl);margin-bottom:1rem">Esempi di applicazione.</h4>
+
+  <div class="hierarchy-examples">
+    <div class="he-card">
+      <h4>Adesivi<br>Personalizzati</h4>
+      <span class="he-tag" style="margin-top:0.75rem">Display+ · 46+ px</span>
+    </div>
+    <div class="he-card">
+      <span class="he-tag">Espositori</span>
+      <h4 style="font-size:1.8rem">Bandiere<br>Pubblicitarie</h4>
+      <p class="he-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <span class="he-tag" style="margin-top:0.75rem">Display 1 + Body</span>
+    </div>
+    <div class="he-card">
+      <span class="he-tag">Sottotitolo 2</span>
+      <h4 style="font-size:1.05rem;margin-top:0.5rem">Striscione Personalizzato</h4>
+      <div class="he-price">a partire da 9,61€/Mq + iva</div>
+      <div class="he-strike">invece di 10,45 €</div>
+      <span class="he-tag" style="margin-top:0.75rem">Titolo 2 + Didascalia</span>
+    </div>
+    <div class="he-card">
+      <p class="he-sub" style="margin-top:0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+      <span class="he-tag" style="margin-top:1rem">Body · 14 px</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DIVIDER ICONS ═══════════════════════ -->
+<section class="section-divider sd-icons">
+  <div class="sd-num">07</div>
+  <div class="sd-inner">
+    <span class="sd-tag">Parte 07 · Iconography</span>
+    <h2>Iconografia<br>e regole d'uso.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ICONS SCALE ═══════════════════════ -->
+<section id="icons-scale" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">22 · Scala icone</span>
+    <h3>5 dimensioni standard.</h3>
+    <p>Le nostre icone sono disponibili in 5 dimensioni principali per leggibilità e usabilità ottimali, oltre a dimensioni extra-piccole ed extra-grandi da utilizzare con parsimonia. Man mano che le icone si riducono di dimensione, i dettagli vengono semplificati per una chiarezza ottimale, mantenendo identità coerente e riconoscibile.</p>
+  </div>
+
+  <div class="icon-scale-row">
+    <div class="icon-scale-item">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      <span class="isi-size">64 px · Extra Large</span>
+    </div>
+    <div class="icon-scale-item">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      <span class="isi-size">24 px · Navigazione</span>
+    </div>
+    <div class="icon-scale-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      <span class="isi-size">20 px · Configuratore</span>
+    </div>
+    <div class="icon-scale-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      <span class="isi-size">16 px · Configuratore</span>
+    </div>
+    <div class="icon-scale-item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      <span class="isi-size">12 px · Extra Small</span>
+    </div>
+  </div>
+
+  <div class="proof-grid" style="margin-top:var(--sp-xl)">
+    <div class="proof-card">
+      <div class="pf-icon">24</div>
+      <h4>Navigazione · 24 px</h4>
+      <p>Dimensione utilizzata principalmente sul sito, in particolare nell'header e nel menu di navigazione dei prodotti.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">20<br><span style="font-size:0.7rem">16</span></div>
+      <h4>Configuratore · 20 e 16 px</h4>
+      <p>Set specializzato di icone progettato per supportare l'area di configurazione del prodotto, con equilibrio ottico ottimale.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">12</div>
+      <h4>Extra small · 12 px</h4>
+      <p>Ideale per controlli di ordinamento delle tabelle, frecce e simboli a forma di chevron: situazioni in cui l'icona deve essere funzionale ma secondaria al contenuto principale.</p>
+    </div>
+    <div class="proof-card">
+      <div class="pf-icon">64</div>
+      <h4>Extra large · 64 px</h4>
+      <p>Riservata alle schermate vuote (empty states), in cui l'icona ha funzione narrativa e illustrativa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ICONS RULES ═══════════════════════ -->
+<section id="icons-rules" class="content-section">
+  <div class="section-header">
+    <span class="sec-label">23 · Regole d'uso icone</span>
+    <h3>Icone e testo, colore icone.</h3>
+    <p>Per una corretta gerarchia visiva, è importante mantenere dimensioni appropriate per icone e testo quando si posizionano questi elementi sulla stessa riga. Le icone sono monocromatiche per impostazione predefinita.</p>
+  </div>
+
+  <div class="icon-rules-grid">
+    <div class="icon-rule-card">
+      <h4>Dimensione del pulsante</h4>
+      <p>Scegli icone che si integrino visivamente bene con i pulsanti. Un buon consiglio è selezionare un'icona di dimensioni pari alla metà di quelle del pulsante. Es.: icona da 16 px abbinata a pulsante da 32 px.</p>
+      <div class="irc-demo">
+        <button class="icon-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello
+        </button>
+      </div>
+    </div>
+
+    <div class="icon-rule-card">
+      <h4>Icona e testo — Relazione dimensionale</h4>
+      <p>Icone e testo devono essere allineati verticalmente. Spaziatura di 4 px tra icone 12/16 px e testo, di 8 px tra icone 20/24 px e testo.</p>
+      <div class="irc-demo" style="flex-direction:column;align-items:flex-start;gap:0.6rem">
+        <span class="icon-text-pair size-12">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello — Didascalia 12 px
+        </span>
+        <span class="icon-text-pair size-14">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello — Body 14 px
+        </span>
+        <span class="icon-text-pair size-16">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello — Sottotitolo 2
+        </span>
+        <span class="icon-text-pair size-20">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello — Sottotitolo 1
+        </span>
+      </div>
+    </div>
+
+    <div class="icon-rule-card">
+      <h4>Colore icone</h4>
+      <p>Le icone sono monocromatiche per impostazione predefinita. La maggior parte utilizza il colore di primo piano principale (nero) o il colore di primo piano disabilitato (grigio).</p>
+      <div class="irc-demo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#CACACA" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+      </div>
+    </div>
+
+    <div class="icon-rule-card">
+      <h4>Colore icona in abbinamento al testo</h4>
+      <p>Se l'icona è contenuta in un pulsante o associata a un'etichetta abbinata a un testo, prende il colore del blocco di testo. Eccezione: i colori terziari semantici (successo, attenzione) in cui l'icona conserva il proprio colore semantico.</p>
+      <div class="irc-demo" style="flex-direction:column;align-items:flex-start;gap:0.5rem">
+        <button class="icon-button b-disabled">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello
+        </button>
+        <button class="icon-button b-success">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+          Carrello
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <h4>Stampa<span style="color:var(--rosso-ss)">e</span>Stampe<span style="color:var(--ciano-ss)">.it</span></h4>
+      <p>Brand Manual 2026 · Strategia, identità visiva e regole d'uso. Documento ufficiale per uso interno e per i partner di brand. Versione 1.0 · Aprile 2026.</p>
+    </div>
+    <div class="ft-col">
+      <h5>Contatti</h5>
+      <p>brand@stampaestampe.it<br>www.stampaestampe.it</p>
+    </div>
+    <div class="ft-col">
+      <h5>Versione</h5>
+      <p>Brand Manual v.1.0<br>Aprile 2026</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© StampaeStampe.it — Tutti i diritti riservati</span>
+    <span>Il tuo mondo in una Stampa.</span>
+  </div>
+</footer>
+
+</main>
+
+<script>
+// Smooth scroll attivo sui link nav
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
